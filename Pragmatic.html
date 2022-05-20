@@ -1,0 +1,17 @@
+<html>
+    <script>
+        var arr = [10,30,11,25];
+        /*
+        console.log("Max ",Math.max(10,2));
+        let max = arr[0];
+        for(let i=0;i< arr.length;i++)
+        {
+            max = Math.max(arr[i],max);
+        }
+        console.log("Max ",max);
+        */
+       //let max = Math.max(... arr);
+       var max = Math.max.apply(null,arr);
+       console.log("Max ",max);
+    </script>
+</html>
