@@ -1,0 +1,22 @@
+<html>
+    <script>
+       console.log('Hello');
+       
+       let a = 0;
+       let b = -0;
+       let c = 0.0;
+       console.log('Zero a',a);
+       console.log('Zero b',b);
+       console.log('Zero c',c);
+
+       console.log('Zero a==b ',a ==b);
+       console.log('1/0 ',1 /a);
+       console.log('1/-0 ',1 /b);
+       console.log('0/-0 ',0/0);
+       let invalidNo = 0/0;
+       console.log("NaN == NaN  ", invalidNo == invalidNo);
+       console.log("NaN != NaN  ", invalidNo != invalidNo);
+       console.log("isNaN  ", isNaN(invalidNo));
+       console.log("isNaN  ", isNaN("hello"));
+    </script>   
+</html>

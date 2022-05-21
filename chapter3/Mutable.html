@@ -1,0 +1,34 @@
+<html>
+    <script>
+       console.log('Hello');
+       let a = 15;
+       let b = 6;
+       
+       a = b;
+       a++;
+
+       console.log('A ',a);
+       console.log('b ',b);
+
+       let obj = {
+           value : 10
+       };
+       console.log('Obj ',obj);
+
+       let obj2 = obj;
+       console.log('Obj2 ',obj2);
+
+       obj2.value = 30;
+       console.log('Obj ',obj);
+       console.log('Obj2 ',obj2);
+
+       obj = {
+           value : 50,
+           something:"Else"
+       };
+       obj.value ++;
+       console.log('Obj ',obj);
+       console.log('Obj2 ',obj2);
+
+    </script>
+</html>
