@@ -1,0 +1,62 @@
+<html>
+    <script>
+      
+       
+       let str = "Hello \r\n'how are you'";
+       console.log("str ",str);
+   
+       str = 'Hello "how are you"';
+       console.log("str ",str);
+
+       str = "Hello \"how are you\"";
+       console.log("str ",str);
+
+       let a = 10;
+       let total = 200;
+       str = `
+       This is line one ${a} "<br/>"
+       Total is ${total}
+       `;
+       console.log("str ",str);
+       
+
+       let str1 = "Hello" + " World "+ (a+1);
+       console.log('Str1 ',str1);
+       console.log('typeof string ',typeof str1);
+
+       console.log('Str1.length ',str1.length);
+
+       let str2 = new String("Hello");
+       console.log('Str2 type ',typeof str2);
+       console.log('Str2 ',str2);
+
+       console.log('Substring ',str1.substring(0,4));
+       console.log('Str1 ',str1);
+       console.log('slice 0,4 ',str1.slice(0,4));
+       console.log('slice -3 ',str1.slice(-3));
+
+       str1 = "Apple,Orange Banana Banana";
+       console.log("Split ",str1.split(","));
+       console.log("IndexOf ",str1.indexOf("Banana"));
+       console.log("IndexOf ",str1.indexOf("Banana",4));
+       console.log("lastIndexOf ",str1.lastIndexOf("Banana"));
+       console.log("startWith ",str1.startsWith("Apple"));
+       console.log("endWith ",str1.endsWith("Banana"));
+       console.log("include ",str1.includes("Banana"));
+
+       console.log("replace ",str1.replaceAll("Banana","Mango"));
+       console.log("lowercase ",str1.toLowerCase());
+       console.log("uppercase ",str1.toUpperCase());
+       console.log("chartAt ",str1.charAt(100));
+       console.log("chartAt ",str1.charCodeAt(0));
+
+       str1 = " 20 ";
+       console.log("paddStart ",str1.padStart(10));
+       console.log("paddStart ",str1.padEnd(10,'*'));
+       console.log("trim ",str1.trim().length);
+       console.log("concat ",str1.concat(" another string"));
+       console.log("repeat ","*".repeat(10));
+
+       console.log("str1[0] ","Hello"[0]);
+    </script>   
+</html>

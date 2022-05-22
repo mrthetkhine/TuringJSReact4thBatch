@@ -1,0 +1,25 @@
+<html>
+    <script>
+      
+       
+       let raining = undefined;
+       console.log('Raining ',raining);
+       let obj = {
+           name: "Tk"
+       };
+       console.log('Obj.age ',obj.age);
+       console.log('typeof undefined ',typeof raining);
+
+       obj = null;
+       console.log('obj ', obj);
+       console.log('typeof null ',typeof obj);
+
+       obj = {
+           name: "Tk"
+       };
+       let nameProp = Symbol("name");
+       console.log("Obj[name ]", obj[nameProp]);
+       console.log("Obj[name ]", obj["name"]);
+       console.log('typeof symbol ',typeof nameProp);
+    </script>   
+</html>
