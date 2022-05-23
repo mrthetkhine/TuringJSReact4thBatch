@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let a ={
+        
+            toString: function()
+            {
+                console.log('toString ');
+                return "12";
+            },
+            valueOf:function()
+            {
+                console.log('valueOf ');
+                return {};
+            },
+            
+        };
+        console.log('+a '+ (a+10));
+        console.log('!!a '+ !!a);
+
+        let b = {
+
+        };
+        console.log('B '+ Number(b));
+        console.log('B '+ b);
+    </script>
+</html>

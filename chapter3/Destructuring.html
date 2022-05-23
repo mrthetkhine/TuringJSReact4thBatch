@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let arr = [10,20,30];
+        console.log('Arr ',arr);
+
+        let a = arr[0];
+        let b = arr[1];
+
+        console.log('Arr a ',a, " b ",b);
+
+        let [c,...d] = arr;
+        console.log('C ',c, " D ",d);
+
+        c = 30;
+        d = 40;
+        [d,c] = [c,d];
+        console.log('C ',c, " D ",d);
+    </script>   
+</html>

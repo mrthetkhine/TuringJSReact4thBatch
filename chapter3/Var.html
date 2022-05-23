@@ -1,0 +1,31 @@
+<html>
+    <script>
+        //let top = 20;
+        console.log("top ",top);
+        function hello()
+        { 
+            console.log('A is  ',a);
+            var a = 10;//hoisting
+            
+            {
+                ///var a = 300;//Not ok
+                //let a = 200;//OK
+                //console.log('K is ',k);
+                let k = 200;
+                console.log('K is ',k);
+                //let k = 300;
+                console.log('A is ',a);
+            }
+            let k = 499;
+            //console.log('K is ',k);
+            console.log("Hello");
+            console.log("Hello function called");
+            console.log('A is  ',a);
+
+            var a = 200;
+            console.log('A is  ',a);
+            
+        }
+        hello();
+    </script>   
+</html>

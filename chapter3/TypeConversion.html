@@ -1,0 +1,26 @@
+<html>
+    <script>
+       let a = "true";
+       let b = a + 2; //Implicit
+       console.log("B is ",b);
+       console.log('ParseInt ', parseInt(a)); //Explicit
+
+       console.log("+ undefined ", + undefined);
+       console.log("+ null ", + null);
+       console.log("+ true ", + true);
+       console.log("+ false ", + false);
+
+       console.log("+ '' ", + '');
+       console.log("+ '12' ", + '12');
+       console.log("+ 'Hello12' ", + 'Hello12');
+
+       console.log("+ [] ", + []);
+       console.log("+ [1] ", + [1]);
+       console.log("+ [1,2] ", + [1,2]);
+
+       console.log("!! 'true' ", !! 'true');
+       console.log("!! 'false' ", !! 'false');
+       console.log("!! '' ", !! '');
+       console.log("!! ' ' ", !! ' ');
+    </script>   
+</html>
