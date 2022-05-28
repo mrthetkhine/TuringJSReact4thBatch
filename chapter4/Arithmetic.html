@@ -1,0 +1,62 @@
+<html>
+    <script>
+        let a = 12;
+        let b = "10";
+        let result = a + b;
+        console.log('Result ',result, ' typeof result ',typeof result);
+
+        let obj = {
+            name : "TK",
+            /*
+            valueOf: function()
+            {
+                console.log('Value of called ');
+                return 10;
+            },*/
+            toString:function()
+            {
+                console.log('toString of called ');
+                return 5;
+            }
+        };
+        result =  a + obj;
+        // a + ObjectToPrimitive(obj)
+        // a + (obj.toString())
+        // a + 5 => number addtion
+        //17
+        console.log('Result ',result, ' typeof result ',typeof result);
+
+
+        result = true + obj;
+         // a + ObjectToPrimitive(obj)
+        // a + (obj.toString())
+        // true + 5 => number addtion
+        //1 + 5;// true to number
+        //6
+        console.log('Result ',result, ' typeof result ',typeof result);
+
+        result = null + 1;
+        console.log('Result ',result, ' typeof result ',typeof result);
+
+        result = undefined + 1;
+        console.log('Result ',result, ' typeof result ',typeof result);
+
+        obj = {
+            name : "TK",
+            /*
+            valueOf: function()
+            {
+                console.log('Value of called ');
+                return 10;
+            },*/
+            toString:function()
+            {
+                console.log('toString of called ');
+                return undefined;
+            }
+        };
+        result = obj + 1;
+        console.log('Result ',result, ' typeof result ',typeof result);
+
+    </script>   
+</html>

@@ -1,0 +1,13 @@
+<html>
+    <script>
+        let obj ;
+
+        console.log('Obj ',obj?.name); 
+        // (obj=== null || obj===undefined)?undefined: obj.name;
+        
+        obj?.method();
+
+        obj = new Date();
+        console.log('Obj ',obj);
+    </script>   
+</html>
