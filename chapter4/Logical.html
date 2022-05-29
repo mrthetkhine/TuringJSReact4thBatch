@@ -1,0 +1,29 @@
+<html>
+    <script>
+        console.log('true && true ', true && true);
+
+        function getTruthy()
+        {
+            console.log('Get True');
+            return true;
+        }
+        function getFalsy()
+        {
+            console.log('Get False');
+            return false;
+        }
+
+        console.log('getFalsy() && getTruthy() ', getFalsy() && getTruthy());
+        console.log('null && getTruthy() ', null && getTruthy());
+        console.log('0 && getTruthy() ', 0 && getTruthy());
+        console.log('"" && getTruthy() ', '' && getTruthy());
+        console.log('false && getTruthy() ', false && getTruthy());
+
+        console.log('getTurthy() && getTruthy() ', getTruthy() && getTruthy());
+        console.log(' "Hello" && getTruthy() ', "Hello" && getTruthy());
+        console.log(' "Hello" && "how are you" ', "Hello" && "how are you");
+
+        console.log(' "Hello" & "how are you" ', "" & getFalsy());
+        console.log(' "1" & "2" ', "1" & 2);
+    </script>   
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <script>
+        let a = 1;
+        let b = 3;
+        console.log('null == null ', null==null);
+
+        console.log('null == undefined ', null==undefined);
+
+        console.log('"3" == 3 ', '3'==3);
+        console.log(' 3 == "3" ', 3 == "3");
+
+        console.log('true == 1 ', true == 1);
+        //true to number
+        // 1 == 1 
+        // 1 === 1
+        console.log('true == "1" ', true == "1");
+        // 1 == "1"
+        // 1  == 1
+        // true
+
+        console.log('false == "0" ', false == "0");
+        console.log('"false" == 0 ', "false" == 0);
+
+        let obj = {
+            valueOf: function()
+            {
+                console.log('Value of');
+                return 5;
+            }
+        };
+        console.log("obj == '5' ", obj== '5' );
+        //Obj to primitive
+        // obj == '5'
+        // valueOf = 5, 
+        // 5 == '5'
+        // 5 == 5
+        console.log("obj == 5 ", obj== 5 );
+
+        console.log("null == false ", null == false );
+        //null == false
+        // null == 0
+
+        console.log("undefined == false ", undefined == false );
+
+        let obj3 ={}; //undefined
+        console.log('ToString ',obj3.toString());
+    </script>   
+</html>
