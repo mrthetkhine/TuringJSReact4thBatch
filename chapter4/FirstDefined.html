@@ -1,0 +1,35 @@
+<html>
+    <script>
+
+        let a =10 ;
+        let result  = a ?? "Default";
+        console.log('Result ',result);
+
+        let obj = {
+            name : "Tk",
+            school: "UCSY"
+        };
+        delete obj.school;
+        console.log('Obj ',obj);
+
+        function hello()
+        {
+            console.log("Hello");
+            return 1;
+        }
+        console.log("Delete ",delete hello);
+        console.log("Hello ",hello);
+
+        console.log("name in obj ", "name" in obj);
+        console.log("school in obj ", "school" in obj);
+
+        let counter = 0;
+        console.log(void counter ++);
+
+        let i,j = 10;
+        console.log('I ',i, ' j ',j);
+
+        let k = (hello(),console.log('Another part'),++j);
+        console.log('K ',k);
+    </script>   
+</html>

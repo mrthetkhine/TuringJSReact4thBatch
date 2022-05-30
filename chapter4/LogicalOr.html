@@ -1,0 +1,39 @@
+<html>
+    <script>
+
+        function getTruthy()
+        {
+            console.log('Get True');
+            return true;
+        }
+        function getFalsy()
+        {
+            console.log('Get False');
+            return false;
+        }
+
+        console.log('getFalsy() || getTruthy() ', getFalsy() || getTruthy());
+        console.log('getFalsy() || {} ', getFalsy() || {});
+        console.log('getFalsy() || "Hello" ', getFalsy() || "Hello");
+
+        console.log('getTruthy() || getFalsy() ', getTruthy() || getFalsy());
+
+        window.Module = window.Module || {
+            display: function()
+            {
+                console.log('Hello');
+            }
+        };
+        if(! window.Module)
+        {
+            window.Module = {
+                display: function()
+                {
+                    console.log('Hello');
+                }
+            };
+        }
+        let flag = true;
+        console.log('Render ', flag && "Data" );
+    </script>   
+</html>

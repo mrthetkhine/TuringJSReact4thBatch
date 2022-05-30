@@ -1,0 +1,33 @@
+<html>
+    <script>
+
+        let a = 10+2;
+        console.log('A ',a);
+
+        let b ;
+        console.log((b=a)=== 12);
+
+        a = b = 10;
+        console.log('A ',a , ' B ', b);
+
+        a += b; // a = a +b
+        console.log('A ',a);
+
+        a += (b +1);
+        console.log('A ',a);
+
+        let arr = [10,20];
+        let i=0;
+        arr[i++]+= 1; // arr[i+1] = (arr[i+1]+1)
+        //arr[i++] = arr[i++] + 1
+        console.log('Arr ',arr);
+
+        function getIndex()
+        {
+            console.log('GetIndex');
+            return 0;
+        }
+        arr[getIndex()]+= 1; 
+        console.log(eval("3+2"));
+    </script>   
+</html>
