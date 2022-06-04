@@ -1,0 +1,53 @@
+<html>
+    <script>
+
+        let arr = ["Apple","Orange","Banana"];
+        for(let item of arr)
+        {
+            console.log("Item ",item);
+        }
+
+        arr = [10,20,30];
+        for(let item of arr)
+        {
+            item ++;
+            console.log("Item ",item);
+        }
+        console.log("Arr ",arr)
+
+        let obj = {
+            'one': 'Apple',
+            'two' : 'Orange'
+        };
+        for(let key of Object.keys(obj))
+        {
+            console.log('Key ',key);
+        }
+        for(let value of Object.values(obj))
+        {
+            console.log('value ',value);
+        }
+        for(let [key,value] of Object.entries(obj))
+        {
+            console.log('Key',key , ' value ',value);
+        }
+        for(let ch of "Hello")
+        {
+            console.log('Char ',ch);
+        }
+
+        let set = new Set(["one","two","one","three"]);
+        console.log("Set  ",set);
+        for(let word of set)
+        {
+            console.log("Word ",word);
+        }
+
+        let map = new Map([[1,"one"],[2,"two"]]);
+        console.log("Map  ",map);
+        for(let [key,value] of map)
+        {
+            console.log("Map Word key ",key, " Value ",value);
+        }
+    </script>   
+</html>
