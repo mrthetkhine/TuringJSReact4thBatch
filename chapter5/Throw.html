@@ -1,0 +1,33 @@
+<html>
+    <script>
+
+        function div(a, b) 
+        {
+            if ( a == 0 && b == 0)
+            {
+                throw new Error("A & B are zero");
+            }
+            else
+            {
+                return a/b;
+            }
+        }
+        let result = div(10,2);
+        console.log("Result is ",result);
+
+        try
+        {
+            result = div(10,0);
+            console.log("Result is ",result);
+        }
+        catch(e)
+        {
+            console.log("there is error ",e);
+        }
+        finally
+        {
+            console.log("Finally Always run ");
+        }
+        console.log("After try");
+    </script>   
+</html>

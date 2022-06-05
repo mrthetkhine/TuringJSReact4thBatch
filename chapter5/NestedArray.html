@@ -1,0 +1,26 @@
+<html>
+    <script>
+
+        let arr = [
+            [1,2,3],
+            [4,5,6,7,8],
+        ];
+
+        let elementToFind = 5;
+      outer:for(var i=0;i< arr.length;i++) 
+      {
+          console.log("I is ",i);
+          for(var j=0;j< arr[i].length; j++)
+          {
+            console.log("Arr[",i,"][",j,"] ",arr[i][j]);
+            if( arr[i][j] == elementToFind)
+            {
+                console.log("Found at ", i, " , ",j);
+                break outer;
+            }
+          }
+      } 
+      console.log('End of loop');
+
+    </script>   
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <script>
+
+        function getData()
+        {
+            try
+            {
+                //return 10;
+                throw new Error("Something went wrong");
+                console.log("Result is ",result);
+            }
+            catch(e)
+            {
+                //throw new Error("Exception throwed");
+                return 200;
+            }
+            finally
+            {
+                console.log("May be I run or not");
+               //return 100;
+               throw new Error('Finally error');
+            }
+            
+        }
+        let result = getData();
+        console.log("Result is ",result);
+
+    </script>   
+</html>

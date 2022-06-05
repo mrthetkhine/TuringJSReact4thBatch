@@ -1,0 +1,20 @@
+<html>
+    <script>
+
+      outer:for(var i=0;i< 5;i++) 
+      {
+          console.log("I is ",i);
+          for(var j=0;j< 6; j++)
+          {
+              console.log(" J is j ",j);
+
+              if(j== 3)
+              {
+                  break outer;
+              }
+          }
+      } 
+      console.log('End of loop');
+
+    </script>   
+</html>

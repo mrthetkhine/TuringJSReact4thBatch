@@ -1,0 +1,18 @@
+<html>
+    <script>
+
+        let obj = {
+            name : "Something",
+            age :30
+
+        };
+        //debugger;
+        with(obj)
+        {
+            name = "Change";
+            age = 29;
+        }
+
+        console.log("Obj ",obj);
+    </script>   
+</html>
