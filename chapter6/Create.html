@@ -1,0 +1,23 @@
+<html>
+    <script>
+        let obj = Object.create({
+            x : 10,
+            y :20,
+            items: [100],
+            display: function()
+            {
+                console.log('Item ',this.items);
+            }
+        });
+        console.log('Obj ',obj);
+
+        console.log('Obj ',obj.x);
+        obj.x = 100;
+        console.log('Obj ',obj);
+        obj.items.push(200);
+
+        console.log('Obj ',obj);
+        obj.display();
+        console.log('Obj ',obj.__proto__.x);
+    </script>   
+</html>

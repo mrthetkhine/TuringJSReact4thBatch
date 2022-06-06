@@ -1,0 +1,16 @@
+<html>
+    <script>
+        hello();
+        function hello()
+        {
+            console.log('Hello');
+        }
+        hello();//function invocation, function call
+
+        String.prototype.myUpperCase = function()
+        {
+            return this.toUpperCase();
+        }
+        console.log("hello".myUpperCase());
+    </script>   
+</html>

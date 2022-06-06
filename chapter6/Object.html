@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let stack = {
+            items: [],
+            push:function(element)
+            {
+                this.items.push(element);
+            }
+        }
+        stack.push(10);
+        console.log('Stack ',stack);
+
+        let nrcOfAungAung = {
+            name: 'Aung Aung',
+            fatherName: "U Hla",
+            dateOfBirth : new Date(),
+            gender: 'Male',
+            profession:'None',
+            display:function()
+            {
+                console.log(`Name ${this.name} Gender ${this.gender}`);
+            }
+        };
+        nrcOfAungAung.display();
+        console.log('Nrc Of Aung Aung ',nrcOfAungAung);
+    </script>   
+</html>
