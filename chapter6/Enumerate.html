@@ -1,0 +1,41 @@
+<html>
+    <script>
+        let grandParent = {
+            grandParent : 200,
+            x : 100,
+            y : 200,
+        }
+        let parent = Object.create(grandParent);
+        parent.parentProp = "Parent Property value";
+        let obj = Object.create( parent);
+        obj.x = "Something";
+        obj.display = function()
+        {
+            console.log('This ');
+        }
+        obj[Symbol("symbol") ] = "Symbol Value";
+        for(let prop in obj)
+        {
+            console.log("Prop ", prop, " value ",obj[prop]);
+        }
+        obj[1] = 100;
+        obj[2] = 200;
+        console.log("Keys ",Object.keys(obj));
+        console.log("ownproperty name ",Object.getOwnPropertyNames(obj));
+
+        let obj2 = {
+            toString: function()
+            {
+                console.log('To String of obj2 called');
+                return "something";
+            }
+        }
+        obj[obj2] =" Magic";
+        obj[[]] = "Hello";
+        
+        console.log("Obj ",obj);
+        console.log("Obj getOwnPropertySymbols ",Object.getOwnPropertySymbols(obj));
+
+        console.log('GetOwnKeys ',Reflect.ownKeys(obj) );
+    </script>   
+</html>

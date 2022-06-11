@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let obj ={
+            x : 100,
+            y: 200,
+            arr: [100,200]
+        };
+        let obj3 = {
+            data : "Data",
+        }
+        let obj2 = {
+            ...obj,
+            ... obj3,
+        };
+        let obj4 = Object.assign({},obj);
+        obj2.arr.push(300);
+        console.log("Obj2 ",obj2);
+        console.log("Obj ",obj);
+        console.log("Obj4 ",obj4);
+    </script>   
+</html>

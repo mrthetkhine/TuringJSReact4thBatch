@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let formObj = {
+            name : "TK",
+            age : 37,
+            address: "Yagon",
+            school: "",
+        };
+        function validateEmpty(obj)
+        {
+            for(let prop in obj)
+            {
+                let value = obj[prop];
+                if(typeof value == 'string')
+                {
+                    if(value=='')
+                    {
+                        console.warn("Property ",prop, " is empty");
+                    }
+                }
+            }
+        }
+        validateEmpty(formObj);
+    </script>   
+</html>

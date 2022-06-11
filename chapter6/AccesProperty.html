@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let obj = {
+            name : "TK",
+            something : "Something"
+        };
+        console.log('Obj.age ',obj.age);
+        console.log('Obj.age.something ',obj?.age?.something);
+        console.log('Obj ',obj);
+
+        delete obj.something;
+        console.log('Obj ',obj);
+
+        console.log('Delete toString ',delete obj.toString);
+        console.log('Obj ',obj);
+
+        console.log('IN ', 'something' in obj);
+        console.log('name IN ', 'name' in obj);
+        console.log('IN toString', 'toString' in obj);
+        console.log(' hasOwnProperty', obj.hasOwnProperty('toString'));
+        console.log(' hasOwnProperty name', obj.hasOwnProperty('name'));
+
+        console.log(' toString o.propertyIsEnumerable', obj.propertyIsEnumerable('toString'));
+        console.log(' name o.propertyIsEnumerable', obj.propertyIsEnumerable('name'));
+    </script>   
+</html>

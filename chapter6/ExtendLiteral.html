@@ -1,0 +1,29 @@
+<html>
+    <script>
+        let obj ={
+            x : 100,
+            y: 200
+        };
+        let age = 20;
+        let obj2 = {
+            x : obj.x,
+            y : obj.y,
+            age ,
+        };
+        console.log("obj ",obj);
+        console.log("obj2 ",obj2);
+
+        obj['name_1']="Data";
+        let propName  = "name_1";
+        
+        console.log("Obj ",obj[propName]);
+
+        let sym = Symbol("symbol");
+        let obj3 = {
+            [propName]: 3000,
+            propName: 3000,
+            [sym] : "Symbol data"
+        } 
+        console.log("Obj3 ",obj3);
+    </script>   
+</html>

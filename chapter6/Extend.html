@@ -1,0 +1,22 @@
+<html>
+    <script>
+        let defObj ={
+            x : 10,
+            k : "Default value"
+        };
+        let parameter = {
+            y : 20,
+            z  :200,
+            x : 300,
+        };
+        let obj = Object.assign(defObj,parameter);
+        /*
+        for(let p in parameter)
+        {
+            defObj[p] = parameter[p];
+        }*/
+        console.log('Def ',defObj);
+        console.log('Parameter ',parameter);
+        console.log('Target ',obj);
+    </script>   
+</html>
