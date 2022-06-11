@@ -1,0 +1,28 @@
+<html>
+    <script>
+        let obj ={
+            show()
+            {
+                console.log('Show');
+            }
+        };
+        function logger(obj)
+        {
+            for(let prop in obj)
+            {
+                if(typeof obj[prop]=='function')
+                {
+                    let oldFunc = obj[prop];
+                    obj[prop] = function()
+                    {
+                        console.log(`Logger called for `,prop);
+                        oldFunc.apply(this,arguments);
+                    }
+                }
+            }
+        }
+        logger(obj);
+        obj.show();
+      
+    </script>   
+</html>
