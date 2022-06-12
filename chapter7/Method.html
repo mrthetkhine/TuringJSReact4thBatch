@@ -1,0 +1,45 @@
+<html>
+    <script>
+    
+      //API Application programming interface.
+      let nums = [10,20,30];
+      function display(value)
+      {
+        console.log("Value ",value);
+      }
+      nums.forEach(display);
+
+      function double(value)
+      {
+            return value*value;
+      }
+      let doubleNum = nums.map(double);
+      console.log("DoubleNum ",doubleNum);
+
+      let objs = [
+            {
+                name : "Tk",
+                age : 37,
+            },
+            {
+                name : "Aung Aung",
+                age : 19,
+            },
+            {
+                name : "Min Aung",
+                age : 20,
+            }
+
+      ];
+      function getAge(obj)
+      {
+        return obj.age;
+      }
+      let ages = objs.map(obj=>obj.age);
+      console.log('Ages ',ages);
+
+
+      let adults = objs.filter(obj=>obj.age>=20);
+      console.log('Adults ',adults);
+    </script>   
+</html>

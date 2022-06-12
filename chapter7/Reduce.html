@@ -1,0 +1,23 @@
+<html>
+    <script>
+    
+      //API Application programming interface.
+      let nums = [1,2,13,4];
+      // x = 1, y = 2 [1,2,3,4] =>  3
+      // x = 3, y = 3 [3,3,4]  => 6
+      // x = 6, y = 3 [6,4]  => 10
+      function add(x,y)
+      {
+        console.log("x ",x, " y ",y);
+        return x+y;
+      }
+      let total = nums.reduce(add,0);
+      console.log("total ",total);
+
+      total = nums.reduceRight(add,0);
+      console.log("total ",total);
+
+      let max = nums.reduce((x,y)=> x>y?x:y);
+      console.log("Max ",max);
+    </script>   
+</html>

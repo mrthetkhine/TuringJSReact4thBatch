@@ -1,0 +1,22 @@
+<html>
+    <script>
+    
+      //API Application programming interface.
+      let nums = [10,20,30,15,21,300];
+      let evenList = nums.filter(num => num % 2 ==0);
+      console.log('EvenList ',evenList);
+
+      let firstEven = nums.find(num => num % 2 ==0);
+      console.log('First even ',firstEven);
+
+      let firstEvenIndex = nums.findIndex(num => num > 20);
+      console.log('First even ',firstEvenIndex);
+
+      nums = [10,20,31];
+      let allEven = nums.every(num => num % 2 ==0);
+      console.log("Every ",allEven);
+
+      let someEven = nums.some(num => num % 2 ==0);
+      console.log("Some ",someEven);
+    </script>   
+</html>

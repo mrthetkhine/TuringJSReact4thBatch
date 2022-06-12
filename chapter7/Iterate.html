@@ -1,0 +1,31 @@
+<html>
+    <script>
+    
+        let ages = [31,14,20,35];
+        for(let i=0; i < ages.length;i++)
+        {
+            console.log('Ages [',i,']=> ',ages[i]);
+        }
+        
+        for(let age of ages)
+        {
+            console.log("Age ",age);
+            age ++;
+        }
+        console.log("Ages ",ages);
+        for(let [index,value] of ages.entries())
+        {
+           ages[index] ++;
+        }
+        console.log("Ages ",ages);
+
+        function display(value)
+        {
+            console.log("value ",value);
+        }
+        ages.forEach(display);
+
+        ages.forEach((age)=>console.log("Age is ",age));
+        ages.forEach(console.log);
+    </script>   
+</html>

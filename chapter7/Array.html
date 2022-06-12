@@ -1,0 +1,40 @@
+<html>
+    <script>
+       //store name of 4 student
+        let name0 = "Mg Mg";
+        let name1 = "Aung Aung";
+        let name2 = "Hla Hla";
+        let name3 = "Min Aung";
+
+        let names = ["Mg Mg","Aung Aung","Hla Hla","Min Aung"];
+        let ages = [31,14,20,35];
+
+        console.log('Names ',names);
+        console.log('Ages ',ages);
+
+        console.log('Names.length ',names.length);
+        console.log('Names[0] ',names[0]);
+
+        names["first"] = "First element";
+        console.log('Names ',names);
+
+        let a = [1,2,3];
+        let b = [...a,4,5];
+        console.log("b ",b);
+
+        let c = new Array();
+        console.log("C ",c);
+
+        let d = new Array(5);
+        console.log("d ",d);
+
+        let e = new Array(1,2,4);
+        console.log("e ",e);
+
+        e = Array.of(1,3,5,7,9);
+        console.log("e ",e);
+
+        let f = Array.from(e);
+        console.log("f ",f);
+    </script>   
+</html>
