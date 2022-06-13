@@ -1,0 +1,23 @@
+<html>
+    <script>
+              //0,1,2,  
+    let arr = [1,2,3,4,5,6];
+    console.log("Slice ",arr.slice(2,4));
+    console.log("Slice 2,-2 ",arr.slice(2,-1));
+
+    arr.splice(2,2);
+    console.log("splice 2,2 ",arr);
+
+    arr.splice(2,0,100,200);
+    console.log("splice 2,0,100,200 ",arr);
+
+    let arr2 = new Array(10);
+    arr2.fill(5);
+    console.log("Arr2  ",arr2);
+
+    let arr3 = [];
+    arr3.length = 10;
+    arr3.fill(10,3,5);
+    console.log("Arr2  ",arr3);
+    </script>  
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <script>
+   
+    let arr = [10,2,100,102,34];
+    arr.sort();
+    console.log("Arr ",arr);
+   
+    // == 0
+    // > +
+    // < -
+    arr.sort((a,b)=> a-b);    
+    console.log("Arr ",arr); 
+
+    let objs =[
+        {
+            name : "One",
+            age : 30,
+        },
+        {
+            name : "Two",
+            age : 10,
+        },
+        {
+            name : "Three",
+            age : 30,
+        },
+        {
+            name : "Four",
+            age : 5,
+        },
+    ];
+    objs.sort((a,b)=> a.age-b.age);
+    console.log("obj ",objs);
+
+    objs.sort((a,b)=> a.name.localeCompare(b.name));
+    console.log("obj ",objs);
+
+    function comparator(a,b)
+    {
+        if(a.age-b.age==0)
+        {
+            console.log('This case');
+            return a.name.localeCompare(b.name)
+        }
+        else
+        {
+            return a.age-b.age;
+        }
+    }
+    objs.sort(comparator);
+    console.log("obj ",objs);
+
+    objs.reverse();
+    console.log("obj ",objs);
+    </script>  
+</html>
