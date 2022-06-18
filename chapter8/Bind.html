@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let obj = {
+            name : "Tk",
+            display(msg)
+            {
+                console.log("This ",this);
+                console.log(msg," ",this.name);
+            }
+        }
+        obj.display("Hello");
+
+        let obj2 = {
+            name : "Someone else"
+        }
+        let m = obj.display.bind(obj2);
+        m("Hello");
+       
+    </script>  
+</html>

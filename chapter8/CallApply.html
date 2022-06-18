@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let obj = {
+            name : "Tk",
+            display(msg)
+            {
+                console.log("This ",this);
+                console.log(msg," ",this.name);
+            }
+        }
+        obj.display("Hello");
+
+        let m = obj.display;
+        m.call(obj,"Hi ");
+
+        let obj2 = {
+            name : "Someone else"
+        };
+        m.call(obj2,"Hello");
+
+        console.log("Math.max ", Math.max(2,4,10));
+        let arr = [10,20,100,40];
+        console.log("Math.max ", Math.max(arr)); //...arr
+
+        console.log("Borrow Math.max ", Math.max.apply(null,arr));
+    </script>  
+</html>

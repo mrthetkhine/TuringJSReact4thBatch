@@ -1,0 +1,16 @@
+<html>
+    <script>
+        //parameter
+      function add(x,y)
+      {
+        console.log("Argument ",arguments[0]);
+        console.log("Argument.length ",arguments.length);
+        console.log("This.length ",add.length);
+        return x+y;
+      }
+      
+      //2 3 arguments.
+      let result = add(2,3,4);
+      console.log("Result ",result);
+    </script>  
+</html>

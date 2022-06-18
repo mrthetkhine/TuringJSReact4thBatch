@@ -1,0 +1,19 @@
+<html>
+    <script>
+        let date = new Date();
+        console.log("Date ",date);
+
+        function Human(name)
+        {
+            this.name = name;
+            this.display = function()
+            {
+                console.log('I am ',this.name);
+            }
+        }
+        let h1 = new Human("TK");
+        h1.display();
+        console.log("H1 ",h1);
+        console.log("Type of h1 ",typeof h1);
+    </script>  
+</html>

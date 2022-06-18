@@ -1,0 +1,24 @@
+<html>
+    <script>
+        function outer()
+        {
+            function inner()
+            {
+                console.log('Inner');
+            }
+            console.log("Outer");
+            inner();
+
+        }
+        outer();
+
+        let obj = {
+            data: "Hello",
+            display()
+            {
+                console.log("Obje method called ",this.data);
+            }
+        };
+        obj.display();
+    </script>  
+</html>

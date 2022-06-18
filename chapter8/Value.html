@@ -1,0 +1,32 @@
+<html>
+    <script>
+        /*
+        First Class Value
+        1 can assign to variable
+        2. can pass as parameter
+        3. Can return from function
+        */
+       function hello()
+       {
+        console.log("Hello");
+       }
+       let func = hello;
+       func();
+
+       function acceptFucn(fun)
+       {
+            console.log("Accept func");
+            fun();
+       }
+       acceptFucn(hello);
+
+       function getFun()
+       {
+        return function()
+        {
+            console.log("Returned function");
+        }
+       }
+       getFun()();
+    </script>  
+</html>

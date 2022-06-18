@@ -1,0 +1,24 @@
+<html>
+    <script>
+        function hello()
+        {
+            console.log("Hello");
+        }
+        window.hello();
+        window['hello']();
+        this.hello();
+        this['hello']();
+
+        window.hello.call();
+        window.hello.apply();
+
+        let obj = {
+            get age()
+            {
+                console.log('As getter');
+                return 20;
+            }
+        }
+        console.log("Obj ",obj.age);
+    </script>  
+</html>
