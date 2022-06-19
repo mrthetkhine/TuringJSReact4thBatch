@@ -1,0 +1,15 @@
+<html>
+    <script>
+        function getUnique()
+        {
+            let counter = 1;
+            return function inner()
+            {
+                return counter ++;
+            }
+        }
+        let counter = getUnique();
+        console.log("Counter ",counter());
+        console.log("Counter ",counter());
+    </script>  
+</html>

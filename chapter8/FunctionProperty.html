@@ -1,0 +1,21 @@
+<html>
+    <script>
+        function add(x,y)
+        {
+            console.log("name ",add.name);
+            console.log("Argument.length ",arguments.length);
+            console.log("Caller ",arguments.callee.caller);
+            console.log("Callee ",arguments.callee);
+            return x+y;
+        }
+        console.log("Add.length ",add.length);
+
+        console.log("Add 2,3,4 ",add(2,3,4));
+        let hello = function something()
+        {
+
+        }
+        console.log("Hello.name ",hello.name);
+        console.log("Hello.prototype ",hello.prototype);
+    </script>  
+</html>

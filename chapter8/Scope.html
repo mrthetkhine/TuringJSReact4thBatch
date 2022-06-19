@@ -1,0 +1,19 @@
+<html>
+    <script>
+        function getUnique()
+        {
+            let counter = 1;
+            {
+                var something="Hello";
+            }
+            return function inner()
+            {
+                console.log("Something ",something);
+                return counter ++;
+            }
+        }
+        let counter = getUnique();
+        console.log("Counter ",counter());
+        console.log("Counter ",counter());
+    </script>  
+</html>
