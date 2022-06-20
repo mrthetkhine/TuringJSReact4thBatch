@@ -1,0 +1,96 @@
+<html>
+    <script>
+        //age > 30? Mr : Mrs
+       let humans = [
+            {
+                name:'TK',
+                age : 37,
+                gender:'Male'
+            }, 
+            {
+                name:'Aung Aung',
+                age : 20,
+                gender:'Male'
+            },
+            {
+                name:'Hla Ha',
+                age : 18,
+                gender:'Female'
+            },
+            {
+                name:'Myo Win',
+                age : 20,
+                gender:'Male'
+            },
+            {
+                name:'Pyu Win',
+                age : 35,
+                gender:'Female'
+            },
+       ];
+
+       let result = [];
+       let agePerGender = {}; /*
+            {
+                'Female':{
+                    total:0,
+                    count:1
+                },
+                'Male':{
+                    total:0,
+                    count:1
+                }
+            }
+       */
+       for(let human of humans)
+       {
+            if(agePerGender[human.gender])
+            {
+                
+                agePerGender[human.gender].total += human.age;
+                agePerGender[human.gender].count++;
+            }
+            else
+            {
+                agePerGender[human.gender] = {
+                    total:human.age,
+                    count:1
+                }
+            }
+       }
+       for(let item in agePerGender)
+       {
+        agePerGender[item].average = agePerGender[item].total/agePerGender[item].count;
+       }
+       console.log('Result ',agePerGender);
+
+
+       let fpResult = humans.reduce((group,b)=>{
+           console.log('Group ',group, " B ",b );
+           /*
+            if(group[b.gender])
+           {
+            group[b.gender].total += b.age;
+            group[b.gender].count ++;
+           }
+           else
+           {
+            group[b.gender] = {
+                total : b.age,
+                count : 1
+            }
+           }
+           return group;
+           */
+          return group[b.gender]? (group[b.gender] = Object.assign({
+                total: group[b.gender].total+ b.age,
+                count : group[b.gender].count +1
+                }),group):
+                (group[b.gender] = Object.assign({
+                    total : b.age,
+                    count : 1
+                }),group);
+       },{});
+       console.log("FP Result ",fpResult);
+    </script>  
+</html>

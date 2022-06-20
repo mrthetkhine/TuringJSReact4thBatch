@@ -1,0 +1,32 @@
+<html>
+    <script>
+       function addLogger(obj)
+       {
+          for(let prop in obj)
+          {
+            if(typeof obj[prop] =='function')
+            {
+                console.log('Prop ',prop);
+                let oldFun = obj[prop];
+                obj[prop] = function()
+                {
+                    console.log('Method ',prop, ' was called');
+                    oldFun();
+                }
+            }
+          }  
+       }
+       let obj = {
+        display()
+        {
+            console.log('Display method');
+        },
+        hello()
+        {
+            console.log('hello method');
+        }
+       }
+       addLogger(obj);
+       obj.display();
+    </script>  
+</html>
