@@ -1,0 +1,18 @@
+<html>
+    <script>
+       function getFun(func)
+       {
+        return func();
+       }
+       function retFun()
+       {
+        return hello;
+       }
+       function hello()
+       {
+        console.log('Hello');
+       }
+       getFun(hello);
+       retFun()();
+    </script>  
+</html>

@@ -1,0 +1,13 @@
+<html>
+    <script>
+       let forEach = (arr,fun)=>{
+            for(let i=0;i<arr.length;i++)
+            {
+                fun(arr[i]);
+            }
+       }
+       let arr = [1,2,3,4,5,6];
+       let display= (x)=>console.log("x is ",x);
+       forEach(arr,display);
+    </script>  
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <script>
+      let isEven = (x)=> x%2==0;
+      console.log('IsEven ',isEven(4));
+      let forEach = (arr,fun)=>{
+            for(let i=0;i<arr.length;i++)
+            {
+                fun(arr[i]);
+            }
+       }
+      const unless=(predicateExp,fn)=>{
+        if(!predicateExp)
+        {
+            fn();
+        }
+      }
+      forEach([1,2,3,4,5,6,7],(number) => 
+        { 
+            unless((number % 2), () => 
+            {
+                console.log(number, " is even")
+            }) 
+        });
+    </script>  
+</html>

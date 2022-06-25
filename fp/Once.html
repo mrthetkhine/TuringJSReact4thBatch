@@ -1,0 +1,18 @@
+<html>
+    <script>
+        const once = (fn) => { 
+            let done = false;
+            return function () 
+            {
+                return done ? undefined : ((done = true), fn.apply(this, arguments))
+            } 
+        }
+        let api = (x)=>{
+            console.log("Api called ",x);
+        };
+        api = once(api);
+        api("hello");
+        api();
+
+    </script>  
+</html>

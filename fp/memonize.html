@@ -1,0 +1,22 @@
+<html>
+    <script>
+       var factorial = (n) => 
+       { 
+            console.log("Fac ",n);
+            if (n === 0) 
+            {
+                return 1; 
+            }
+            // This is it! Recursion!!
+            return n * factorial(n - 1); 
+        }
+        const memoized = (fn) => { 
+            const lookupTable = {};
+            return (arg) => lookupTable[arg] 
+                            || (lookupTable[arg] =fn(arg)); 
+        }
+        let fact = memoized(factorial);
+        fact(5);
+        fact(5);
+    </script>  
+</html>

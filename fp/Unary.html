@@ -1,0 +1,21 @@
+<html>
+    <script>
+      console.log([1,2,3,4,5].map(x=>x*x));
+      console.log(['1','2','3'].map(parseInt));
+
+      //1,0 = parseInt(1,0)
+      //2,1 = NaN
+      //3,2 = NaN
+      const unary = (fn)=> fn.length==1?
+                    fn
+                    :(arg)=>fn(arg);
+
+      function acceptTwo(x,y)
+      {
+        console.log("x ",x, ' Y ',y);
+      }
+      let newFun = unary(acceptTwo);
+      newFun(10,20);
+      console.log(['1','2','3'].map(unary(parseInt)));
+    </script>  
+</html>

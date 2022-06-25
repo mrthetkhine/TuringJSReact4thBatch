@@ -1,0 +1,20 @@
+<html>
+    <script>
+       function zip(leftArr,rightArr,fun)
+       {
+         let results = [];
+         let len = Math.min(leftArr.length,rightArr.length)
+         for(let i=0;i< len ;i++)
+         {
+            let result = fun(leftArr[i],rightArr[i]);
+            results.push(result);
+         }
+         return results;
+       }
+       let a = [1,2,3,4];
+       let b = ['Apple','Orange','Banana'];
+       let pair=(a,b) => a + "=>" + b;
+       let results = zip(a,b,pair);
+       console.log("Result ",results);
+    </script>  
+</html>
