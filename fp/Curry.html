@@ -1,0 +1,38 @@
+<html>
+    <script>
+       let curry =(fn) => {
+            if(typeof fn!=='function')
+            {
+                throw Error('No function provided'); 
+            }
+            return function curriedFn(...args)
+            { 
+                if(args.length < fn.length)
+                { 
+                    return function()
+                    {
+                        return curriedFn.apply(null, 
+                                                args.concat( [].slice.call(arguments) ));
+                    };
+                }
+                return fn.apply(null, args);
+            }; 
+        };
+        let add = (x,y) => x+y;
+        let double= (x) => x * x;
+        let curryAdd = curry(add);
+        console.log('Curry Add ',curryAdd);
+        console.log("Add ", curryAdd(2));
+
+        function compose(funA,funB)
+        {
+                return function(str)
+                {
+                    return funA(funB(str));
+                }
+        }
+        let add3 = curry(add)(3);
+        let newFun = compose(double,add3);
+        console.log("new func ",newFun(2));
+    </script>  
+</html>

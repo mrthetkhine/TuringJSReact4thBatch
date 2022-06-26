@@ -1,0 +1,32 @@
+<html>
+    <script>
+       function prependHi(str)
+       {
+            return "Hi " + str;
+       }
+       function toUpper(str)
+       {
+            return str.toUpperCase();
+       }
+       console.log('Append  ', prependHi("how are you"));
+       console.log('toupper  ', toUpper(prependHi("how are you")));
+
+       function combine(str)
+       {
+            let a = prependHi(str);
+            let b = toUpper(a);
+            return b;
+       }
+       console.log("Combine ", combine("hello"));
+
+       function compose(funA,funB)
+       {
+            return function(str)
+            {
+                return funA(funB(str));
+            }
+       }
+       let newFunc = compose(toUpper,prependHi);
+       console.log('NewFunc ',newFunc("hello good evening"));
+    </script>  
+</html>

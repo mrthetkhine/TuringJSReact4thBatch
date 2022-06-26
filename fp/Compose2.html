@@ -1,0 +1,31 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       function prependHi(str)
+       {
+            return "Hi " + str;
+       }
+       function toUpper(str)
+       {
+            return str.toUpperCase();
+       }
+        const compose = (funcA,funcB)=>(a)=> funcA(funcB(a));
+        const pipe = (funcA,funcB)=>(a)=> funcB(funcA(a));
+        let newFunc = compose(toUpper, prependHi);
+        console.log("New func ",newFunc("hello"));
+
+        let split = (str)=>str.split(" ");
+        let count = (arr)=> arr.length;
+        let wordCount = compose( count,split);
+        console.log("Word Count ", wordCount("hello how are you"));
+
+        let wordCount2 = R.compose(count,split);
+        console.log("Word Count ", wordCount2("hello how are you"));
+
+        let wordCount3 = R.pipe(split,count);
+        console.log("Word Count ", wordCount3("hello how are you"));
+
+        let wordCount4 = pipe(split,count);
+        console.log("Word Count ", wordCount3("hello how are you"));
+    </script>
+</html>

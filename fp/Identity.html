@@ -1,0 +1,33 @@
+<html>
+    <script>
+       const identity = (x) => x;
+       console.log("Identity ",identity(10));
+
+       function add(x,y)
+       {
+            return x+y;
+       }
+       function curryAdd(x)
+       {
+            return function(y)
+            {
+                return x+y;
+            }
+       }
+       let add3 = curryAdd(3);
+       console.log('Add3 ',add3);
+       console.log("add3 + 4 ",add3(4));
+       console.log("add5 + 4 ",add3(5));
+
+       const addCurried = x => y => x + y;
+       const curry = (binaryFn) => { 
+            return function (firstArg) {
+                return function (secondArg) {
+                    return binaryFn(firstArg, secondArg);
+                }; 
+            };
+        };
+        let curriedAdd = curry(add);
+        console.log("Add ",curriedAdd(3)(4));
+    </script>  
+</html>

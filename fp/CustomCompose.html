@@ -1,0 +1,16 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       function prependHi(str)
+       {
+            return "Hi " + str;
+       }
+       function toUpper(str)
+       {
+            return str.toUpperCase();
+       }
+       compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x)
+       let newFunc = compose(toUpper,prependHi);
+       console.log("New Func ",newFunc("hello"));
+    </script>
+</html>
