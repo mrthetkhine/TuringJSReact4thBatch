@@ -1,0 +1,29 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       function prependHi(str)
+       {
+            return "Hi " + str;
+       }
+       function toUpper(str)
+       {
+            return str.toUpperCase();
+       }
+       compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x)
+
+       //const tap =(fn,a)=>{ fn(a); return a;};
+       const impureTap = (a)=>{
+        console.log(a);
+        return a;
+       }
+       const tap = fn => a => { fn(a); return a; };
+       let newFunc = compose(toUpper,prependHi);
+       console.log("New Func ",newFunc("hello"));
+
+       impureTap("Hello");
+       //tap(console.log,"how are you");
+       let log = tap(console.log);
+       newFunc = compose(log,toUpper,log,prependHi);
+       console.log("NewFunc ",newFunc("test"));
+    </script>
+</html>

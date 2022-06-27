@@ -1,0 +1,40 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let k = 2;
+       let arr = [2,2,2,1,1,1,1,1,2,2,3];
+
+       let countAccumulator = (group,b)=>{
+            return group[b]? (group[b]++,group)
+                           : (group[b]=1,group); 
+       };
+       function topK(single,k)
+       {
+        return single.reduce((arr,b)=>{
+            return arr.length == k?arr:[...arr,b];
+        },[]);
+       }
+       /*
+       let countGroup = arr.reduce(countAccumulator,[]);
+       console.log('Count Group ',countGroup);
+       let multi = countGroup.map((ele,index)=>[index,ele]);
+       console.log('Multi ',multi);
+       let result = multi.filter(ele=> ele != undefined);
+       console.log('result ',result);
+       result.sort( (a,b)=>b[1]-a[1]);
+
+       let single = result.map(arr=>arr[0]);
+       console.log('result ',single);
+      
+       let answer = topK(single,k);
+       console.log('answer ',answer);
+       */
+       let result = arr.reduce(countAccumulator,[])
+          .map((ele,index)=>[index,ele])  
+          .filter(ele=> ele != undefined)
+          .sort( (a,b)=>b[1]-a[1])
+          .map(arr=>arr[0]);
+        let answer = topK(result,k);
+        console.log('answer ',answer);
+    </script>
+</html>
