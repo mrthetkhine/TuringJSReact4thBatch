@@ -1,0 +1,24 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let toUpper = (str)=>str.toUpperCase();
+       let appendHi = (str)=> str+ " Hi";
+
+       const MayBe = (v)=>({
+            value: v,
+            map (f){
+                return this.isNothing()? MayBe.of(null) : MayBe.of(f(v))
+            },
+            valueOf:()=>v,
+            isNothing:()=>v === undefined || v=== null,
+            
+        });
+        MayBe.of = (v)=> MayBe(v);
+        
+        let emptyMaybe = MayBe.of(null);
+        console.log('IsNothing ',emptyMaybe.isNothing());
+        let nextMayBe = emptyMaybe.map(toUpper)
+                                  .map(appendHi);  
+        console.log("Maybe value ",nextMayBe.valueOf());
+    </script>
+</html>

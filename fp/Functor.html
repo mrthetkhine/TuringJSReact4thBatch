@@ -1,0 +1,17 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       const Functor = (v)=>({
+            value: v,
+            map : (f)=>Functor(f(v)),
+            valueOf:()=>v
+        });
+        Functor.of = (v)=> Functor(v);
+        let functorX = Functor.of(1);
+        let double = (x)=> x *x;
+        let inc = (x)=> x+1;
+        let newX = functorX.map(inc)
+                           .map(double) ;
+        console.log("NewX ",newX.valueOf());
+    </script>
+</html>

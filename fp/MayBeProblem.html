@@ -1,0 +1,11 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       let toUpper = (str)=>str.toUpperCase();
+       let appendHi = (str)=> str+ " Hi";
+
+       let newFunc = R.pipe( toUpper, appendHi);
+       let str = null;
+       console.log("NewFunc ",newFunc(str));
+    </script>
+</html>
