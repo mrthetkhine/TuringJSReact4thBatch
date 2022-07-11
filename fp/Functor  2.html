@@ -1,0 +1,23 @@
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/ramda@0.27.1/dist/ramda.min.js"></script>
+    <script>
+       const Functor = {
+            of: value => ({
+                value: value,
+                inspect: () => `Functor(${value})`,
+                map: fn => Functor.of(fn(value))
+            })
+        };
+        const add1 = a => a + 1;
+        // we wrap Functor around the value 1
+        const myFunctor = Functor.of(1); // Functor(1)
+        console.log('Fucntor.of(1)', myFunctor.inspect()); // => 'Functor(1)
+        
+        // we map the function add1 on the value inside the functor
+        const myFunctorPlus1 = myFunctor.map(add1); // Functor(2)
+        console.log(myFunctorPlus1.value); // => 2
+        console.log(myFunctor.map(a => a + 1).value); // => 2
+        myFunctor.value; // => 1, no mutation
+       
+    </script>
+</html>
