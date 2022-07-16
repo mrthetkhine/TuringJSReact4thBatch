@@ -1,0 +1,47 @@
+<html>
+    
+    <script>
+       
+       class Human
+       {
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+                this.data = [];
+                console.log('Human constructor');
+            }
+            show()
+            {
+                console.log("Name ",this.name, " Age ",this.age);
+            }
+       }
+       class Teacher
+       {
+            constructor(name,age,school)
+            {
+                this.human = new Human(name,age);
+                this.school = school;
+                console.log('Teacher constructor');
+            }
+            add(element)
+            {
+                this.human.data.push(element);
+            }
+            show()
+            {
+                this.human.show();
+                console.log('School ',this.school);
+            }
+       }
+       let obj = new Teacher('Tk',37,"Turing");
+       obj.show();
+       obj.add("one");
+
+       let obj2 = new Teacher('Tk2',37,"Turing");
+       obj2.show();
+       obj2.add("two");
+
+    
+    </script>
+</html>
