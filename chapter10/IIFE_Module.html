@@ -1,0 +1,26 @@
+<html>
+    
+    <script>
+       
+       //IIFE=Immeidately Invoking Function Expression
+
+       let MyModule = (function()
+       {
+            function privateMethod()
+            {
+                console.log("Private Method");
+            }
+            function hello()
+            {
+                console.log("Hello");
+                privateMethod();
+            }
+            return {
+                method: hello
+            }
+       })();
+       MyModule.method();
+
+       MyModule = MyModule || {};
+    </script>
+</html>

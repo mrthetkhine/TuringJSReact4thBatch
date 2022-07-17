@@ -1,0 +1,24 @@
+<html>
+    
+    <script>
+       
+       let Human = class{
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+                this.data = [];
+                console.log('Human constructor');
+
+                //something = 10;
+            }
+            show()
+            {
+                console.log("Name ",this.name, " Age ",this.age);
+            }
+       };
+       let h = new Human("TK",37);
+       console.log("h ",h);
+    
+    </script>
+</html>

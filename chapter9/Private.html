@@ -1,0 +1,21 @@
+<html>
+    
+    <script>
+       
+       class Demo{
+            #privateData;
+            constructor()
+            {
+                this.#privateData = 100;
+                
+            }
+            display()
+            {
+                console.log("Show private ",this.#privateData);
+            }
+       };
+       let obj = new Demo();
+       //console.log("Get private ", obj.#privateData);
+       obj.display();
+    </script>
+</html>

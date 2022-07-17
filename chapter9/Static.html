@@ -1,0 +1,39 @@
+<html>
+    
+    <script>
+       
+       class Demo{
+            static counter = 0;
+            instance;
+            static {
+                Demo.counter = 100;
+                console.log("Static intializer");
+            }
+            constructor()
+            {
+                this.instance = 0;
+            }
+            show()
+            {
+                console.log("instance ",this.instance, " static ",Demo.counter);
+            }
+            static display()
+            {
+                console.log("This ",Demo.counter);
+            }
+       };
+       let obj = new Demo();
+       let obj2 = new Demo();
+       obj.instance = 200;
+       obj.data = "Something";
+       obj2.instance++;
+
+       Demo.counter = 100;
+       obj.show();
+       obj2.show();
+    
+       Demo.display();
+
+       console.log("Obj ",obj);
+    </script>
+</html>
