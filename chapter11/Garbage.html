@@ -1,0 +1,12 @@
+<html>
+   
+    <button type="button" id="btnCollect">GC Collect</button>
+    <script>
+       
+      let arr = new Array(10000000);
+      let k = arr;  
+      document.getElementById("btnCollect").addEventListener("click",()=>{
+          arr = null;  
+      });
+    </script>
+</html>

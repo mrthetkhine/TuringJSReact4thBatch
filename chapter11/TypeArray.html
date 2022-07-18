@@ -1,0 +1,18 @@
+<html>
+   
+    
+    <script>
+       
+       let bytes = new Uint8Array(10000000);//11MB
+       //let bytes = new Array(10000000); //41.5MB
+
+       let buffer = new ArrayBuffer(1024*1024);
+       console.log('Buffer byte length ',buffer.byteLength);
+       bytes = new Uint8Array(buffer);
+       bytes[0] = 100; 
+       let ints = new Int32Array(buffer);
+       //ints[0] = 100;
+
+       console.log('Bytes [0] ',ints[0]);
+    </script>
+</html>

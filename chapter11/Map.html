@@ -1,0 +1,50 @@
+<html>
+   
+    <script>
+       
+      //key=>value
+      let map = new Map([
+        ["user1","Admin"],
+        ["user2","User"],
+        ["user1","SuperUser"],
+      ]);
+      console.log('Map ',map);
+
+      let obj = {
+        name : "Tk",
+        age : 37
+      };
+      let map2 = new Map(Object.entries(obj));
+      console.log("Map 2 ",map2);
+
+      map.set("user","Admin");
+      console.log("map.get('user') ", map.get("user"));
+      console.log("map.has ",map.has("user"));
+      console.log("map.size ",map.size);
+
+      map.delete("user");
+      console.log("map ",map);
+
+      obj = {
+        toString()
+        {
+            console.log('ToString called');
+            return "hello";
+        }
+      }
+      map.set(obj,2);
+      console.log("map ",map);
+      map.set({},3);
+
+      console.log("Map.get ",map.get(obj));
+
+      for(let [key,value] of map)
+      {
+        console.log("Key ",key, " Value ",value);
+      }
+      map.forEach((value,key)=> console.log("Foreach Key ",key, " Value ",value));
+      console.log("Keys ",[...map.keys()]);
+      console.log("Values ",map.values());
+      console.log("Entries ",map.entries());
+    </script>
+</html>
