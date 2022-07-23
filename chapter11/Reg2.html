@@ -1,0 +1,36 @@
+<html>
+   
+    
+    <script>
+       
+       //email
+       //username@website.com
+
+       let pattern = /[xyz]+/i;
+
+       console.log("[xyz]+ xxy", pattern.test("xxy"));
+       console.log("[xyz]+ xa", pattern.test("xa"));
+       console.log("[xyz]+ hello", pattern.test("hello"));
+
+       pattern = /[a-c]+/i;
+       console.log("/[a-c]+/i+ abc", pattern.test("abc"));
+       console.log("/[a-c]+/i+ def", pattern.test("def"));
+
+       pattern = /([A-Z][a-z])+/i;
+       console.log("/([A-Z][a-z])+/ abc", pattern.test("abc"));
+
+       pattern = /\w+/i;
+       console.log("/\w+/i/ hello", pattern.test("hello"));
+       console.log("/\w+/i/ 1223", pattern.test("1223"));
+       console.log("/\w+/i/ ", pattern.test(""));
+
+       pattern = /\d{8,11}/i;
+       console.log("/\d{8,11}/i 99191111", pattern.test("99191111"));
+       console.log("/\d{8,11}/i hello", pattern.test("hello"));
+
+       pattern = /\D{8,11}/i;
+       console.log("/\D{8,11}/i 99191111", pattern.test("99191111"));
+       console.log("/\D{8,11}/i hellohow are you", pattern.test("hello how are you"));
+
+    </script>
+</html>

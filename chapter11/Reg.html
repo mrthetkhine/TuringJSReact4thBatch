@@ -1,0 +1,36 @@
+<html>
+   
+    
+    <script>
+       
+       //email
+       //username@website.com
+
+       let pattern = /s$/i;
+
+       console.log("str starts ", pattern.test("starts"));
+       console.log("str hello ", pattern.test("hello"));
+       console.log("str startS ", pattern.test("startS"));
+
+       pattern = /^Java/i;
+       console.log("/^Java/ Java ", pattern.test("Java"));
+       console.log("/^Java/ JavaScript ", pattern.test("JavaScript"));
+
+       pattern = /^Java.+/i;
+       console.log("/^Java.+/i Java ", pattern.test("Java"));
+       console.log("/^Java.+/i JavaScript ", pattern.test("JavaScript"));
+
+       pattern = /^Java.?$/i;
+       console.log("/^Java.?$/i Java ", pattern.test("Java"));
+       console.log("/^Java.?$/i Java1 ", pattern.test("Java1"));
+       console.log("/^Java.?$/i JavaScript ", pattern.test("JavaScript"));
+
+       pattern = /^Javab{3}/i;
+       console.log(" /^Javab{3}/i Javabbb ", pattern.test("Javabbb"));
+       console.log(" /^Javab{3}/i Javabb ", pattern.test("Javabb"));
+
+       pattern = /^Javab{3,5}/i;
+       console.log(" /^Javab{3,5}/i Javabbb ", pattern.test("Javabbb"));
+       console.log(" /^Javab{3,5}/i Javabbbb ", pattern.test("Javabbbb"));
+    </script>
+</html>

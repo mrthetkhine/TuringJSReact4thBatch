@@ -1,0 +1,35 @@
+<html>
+   
+    
+    <script>
+       
+       //email
+       //username@website.com
+
+       let pattern = /Jhon(?=Wick)/i;
+
+       console.log("/Jhon(?=Wick)/i  JhonWick", pattern.test(" JhonWick "));
+       console.log("/Jhon(?=Wick)/i JhonJame", pattern.test("JhonJames"));
+       
+       pattern = /Jhon(?!Wick)/i;
+
+       console.log(" /Jhon(?!Wick)/i  JhonWick", pattern.test(" JhonWick "));
+       console.log(" /Jhon(?!Wick)/i JhonJame", pattern.test("JhonJames"));
+       
+
+       console.log(" JhonJame", "JhonJame".match(pattern));
+
+       //(?<=y)x
+       pattern = /(?<=Jhon)Wick/i;
+
+        console.log(" /(?<=Jhon)Wick/ JhonWick", pattern.test(" JhonWick "));
+        console.log("  /(?<=Jhon)Wick/ JameWick", pattern.test("JameWick"));
+        console.log(" JhonWick", "JhonWick".match(pattern));
+
+        pattern = /(?<!Jhon)Wick/i;
+
+        console.log(" / /(?<!Jhon)Wick/i JhonWick", pattern.test(" JhonWick "));
+        console.log(" /(?<!Jhon)Wick/i JameWick", pattern.test("JameWick"));
+        console.log(" JhonWick", "JhonWick".match(pattern));
+    </script>
+</html>

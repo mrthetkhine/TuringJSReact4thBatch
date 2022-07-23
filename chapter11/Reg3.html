@@ -1,0 +1,30 @@
+<html>
+   
+    
+    <script>
+       
+       //email
+       //username@website.com
+
+       let pattern = /s+/i;
+
+       console.log(" /s+/i  ", pattern.test(" "));
+       console.log(" /s+/i hello", pattern.test("hello"));
+       
+       pattern = /\.+/i;
+
+       console.log(" /\.+/i ....  ", pattern.test(" ...."));
+       console.log(" /\.+/i hello", pattern.test("hello"));
+
+       pattern = /((abc)|(xyz))+/i;
+
+       console.log("/((abc)|(xyz))+/i ", pattern.test("abcxyzabc"));
+       console.log("((abc)|(xyz))+/i hello", pattern.test("hello"));
+
+       pattern = /\bm+/i;
+
+       console.log(" /\bm+/i ", pattern.test("moon"));
+       console.log(" /\bm+/i", pattern.test("hellom milo"));
+
+    </script>
+</html>
