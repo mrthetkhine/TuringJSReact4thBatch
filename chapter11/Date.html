@@ -1,0 +1,29 @@
+<html>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+       
+       let date = new Date();
+       date = new Date(2022,6,24,16,50);
+       console.log('Date ',date);
+
+       let time = date.getTime();
+       console.log("Time ",time);
+       console.log("Time as date ",new Date(time));
+
+       let mDate = moment(date).add(12,'days');
+       console.log('Moment date ',mDate.format('YYYY-MM-DD'));
+
+       let dateStr = mDate.format('YYYY-MM-DD');
+       mDate = moment(dateStr,'YYYY-MM-DD');
+
+       console.log('Date ',mDate.format("YYYY MMM DD"));
+
+        const dateB = moment('2014-11-11');
+        const dateC = moment('2014-10-11');
+
+        console.log('Difference is ', dateB.diff(dateC), 'milliseconds');
+        console.log('Difference is ', dateB.diff(dateC, 'days'), 'days');
+        console.log('Difference is ', dateB.diff(dateC, 'months'), 'months');
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<html>
+   
+   
+    <script>
+       
+       let obj = {
+        name : "TK",
+        age : 37,
+        password:"33933",
+        display: function()
+        {
+            console.log('Name ',this.name);
+        },
+        toJSON:function(){
+            console.log('ToJSON called');
+            return {
+                username: this.name,
+                age : this.age
+            }
+        },
+       };
+       let jsonString = JSON.stringify(obj);
+       console.log('JSON string ',jsonString);
+
+       let obj2 = JSON.parse(jsonString);
+       console.log("Obj2 ",obj2);
+       console.log("Obj1 == obj2 ",(obj===obj2));
+    </script>
+</html>

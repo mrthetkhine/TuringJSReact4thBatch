@@ -1,0 +1,30 @@
+<html>
+   
+   
+    <script>
+       
+       let obj = {
+        name : "TK",
+        gender:0, //0-Male, 1-Female
+        };
+
+        let str = JSON.stringify(obj);
+        let mapping = {
+            0:"Male",
+            1:"Female"
+        }
+        let obj2 = JSON.parse(str,function(key,value)
+        {
+            console.log('Key ',key, ' value ',value);
+            if(key=="gender")
+            {
+                return mapping[value];
+            }
+            return value;
+        });
+        console.log("Obj2 ",obj2);
+
+        str = JSON.stringify(obj,["name"]);
+        console.log("Str ",str);
+    </script>
+</html>

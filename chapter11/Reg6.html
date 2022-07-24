@@ -1,0 +1,26 @@
+<html>
+   
+    
+    <script>
+       
+       //email
+       //username@website.com
+       let url = /(?<protocol>\w+):\/\/([\w.]+)\/(\S*)/;
+        let text = "Visit my blog at http://www.example.com/~david"; 
+        let match = text.match(url);
+        let fullurl, protocol, host, path;
+        if (match !== null) {
+            fullurl = match[0]; // fullurl == "http://www.example.com/~david"
+            protocol = match[1]; // protocol == "http"
+            host = match[2]; // host == "www.example.com" path = match[3]; // path == "~david"
+
+            console.log('Match ',match);
+        }
+
+        const words = /\b\p{Alphabetic}+\b/gu; // \p is not supported in Firefox yet
+        text = "This is a naïve test of the matchAll() method.";
+        for(let word of text.matchAll(words)) {
+            console.log(`Found '${word[0]}' at index ${word.index}.`);
+        }
+    </script>
+</html>
