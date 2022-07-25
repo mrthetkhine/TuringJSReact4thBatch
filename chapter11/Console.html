@@ -1,0 +1,50 @@
+<html>
+   
+    
+    <script>
+       console.log("Log");
+       console.info("Info");
+       console.debug("Debug");
+       console.warn("Warn");
+       console.error("Error");
+
+       function div(a,b)
+       {
+        console.assert(arguments.length==2,"Invalid parameter");
+
+       }
+       div(2);
+       console.clear();
+       console.table(["apples", "oranges", "bananas"]);
+
+       function one()
+       {
+        console.log("one");
+        two();
+       }
+       function two()
+       {
+        console.log("Two");
+        console.trace();
+       }
+       one();
+
+       for(let i=0;i< 10;i++)
+       {
+        console.count("Count line ");
+       }
+       console.countReset("Count line ");
+       console.count("Count line ");
+       console.group();
+        console.log("Level 2");
+        console.group();
+        console.log("Level 3");
+        console.warn("More of level 3");
+        console.groupEnd();
+        console.log("Level 1");
+        console.groupEnd();
+        console.time("label1");
+        console.timeLog("label1","This is log");
+        console.timeEnd("label1");
+    </script>
+</html>
