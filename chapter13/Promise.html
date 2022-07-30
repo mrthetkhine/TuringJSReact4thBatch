@@ -1,0 +1,21 @@
+<html>
+   
+   
+    <script>
+      
+      let promise = Promise.resolve(1);
+      promise.then(data=>console.log("Data is ",data))
+            .catch(error=>console.error)
+            .then(data=>console.log("Next Step ",data))
+
+     promise = Promise.reject(new Error("Error"));
+     promise.then(data=>console.log, 
+                 error=>{
+                    console.log("Error ",error);
+                    //throw new Error("Error in first step");
+                    return "data";
+                 })
+             .then(data=>console.log("step2 ",data),
+                error=>console.log("Step 2 error ",error));
+    </script>
+</html>

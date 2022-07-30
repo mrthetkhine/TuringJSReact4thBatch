@@ -1,0 +1,14 @@
+<html>
+   
+   
+    <script>
+      
+      let url = "https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8";
+      let promise = fetch(url);
+      console.log("Promise ",promise);
+      promise.then(data=>data.json())
+             .then(json=>console.log(json));
+      console.log('Next line');  
+      
+    </script>
+</html>

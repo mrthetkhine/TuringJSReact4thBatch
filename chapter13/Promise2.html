@@ -1,0 +1,29 @@
+<html>
+   
+   
+    <script>
+      //undefined.something
+      let promise = Promise.resolve(1);
+      promise.then(data=>{throw Error(data)})
+            .catch(error=>console.error)
+            .then(data=>console.log("Next Step ",data))
+
+      promise = new Promise((resolve,reject)=>{
+        setTimeout(()=>resolve(100),3000);
+      });       
+      promise.then(data=>console.log("Data ",data));
+         
+     const promise1 = new Promise((resolve, reject) => {
+            throw 'Uh-oh!';
+        });
+
+        promise1.then(data=>console.log("Data ",data))
+                .catch((error) => {
+                    console.error(error);
+                })
+                .finally(data=>{
+                    console.log("Finally run",data);
+                })
+      
+    </script>
+</html>
