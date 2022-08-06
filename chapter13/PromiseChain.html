@@ -1,0 +1,14 @@
+<html>
+   
+   
+    <script>
+    let promise = Promise.resolve(100);
+    let add1 = (x)=> x+1;
+    let double =(x)=> x * 2;
+
+    let promise2 = promise.then(add1)
+                          .then(x=>Promise.resolve(double(x))); 
+    promise2.then(x=>console.log(x))
+    console.log("Promise ",promise);
+    </script>
+</html>

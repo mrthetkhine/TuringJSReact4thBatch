@@ -1,0 +1,27 @@
+<html>
+   
+ 
+    <script>
+    let model = {
+        name : "Tk",
+        age : 37
+    };
+    //Object.preventExtensions(model);
+    let obj = Object.create(model);
+    console.log("Prototype ",Object.getPrototypeOf(model));
+    console.log("Prototype obj ",Object.getPrototypeOf(obj));
+    console.log("Obj ",obj);
+    obj.age = 20;
+    console.log("Obj ",obj);
+
+    console.log("Prototype.age ",obj.__proto__.age);
+
+    let uint8 = { 
+        [Symbol.hasInstance](x) 
+        {
+            return Number.isInteger(x) && x >= 0 && x <= 255; 
+        }
+    }
+    console.log(123 instanceof uint8);
+    </script>
+</html>

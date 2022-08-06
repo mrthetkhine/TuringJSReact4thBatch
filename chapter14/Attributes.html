@@ -1,0 +1,35 @@
+<html>
+   
+   
+    <script>
+    let obj = {
+        display()
+        {
+            console.log("Display");
+        },
+        hello()
+        {
+            console.log("Hello");
+        },
+    };
+
+    console.log("Attribute ",Object.getOwnPropertyDescriptors(obj));
+    console.log("Attribute ",Object.getOwnPropertyDescriptor(obj,"hello"));
+
+    Object.defineProperty(obj,"age",{
+        value : 37,
+        writable : false,
+        enumerable : false,
+        configurable : false,
+    });
+    console.log("Obj ",obj.age);
+    obj.age = 30;
+
+    for(let prop in obj)
+    {
+        console.log("Property ",prop);
+    }
+    delete obj.age;
+    console.log("Obj ",obj);
+    </script>
+</html>

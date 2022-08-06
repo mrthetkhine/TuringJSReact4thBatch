@@ -1,0 +1,36 @@
+<html>
+   
+   
+    <script>
+    let obj = {
+        display()
+        {
+            console.log("Display");
+        },
+        hello()
+        {
+            console.log("Hello");
+        }
+    };
+
+    function logger(obj)
+    {
+        for(let prop in obj)
+        {
+            if(typeof obj[prop] === 'function')
+            {
+                let oldFun = obj[prop];
+                let newFunction = function()
+                {
+                    console.log("Method ",prop," was called");
+                    oldFun.apply(obj,arguments);
+                }
+                obj[prop] = newFunction;
+            }
+        }
+    }
+    logger(obj);
+    obj.display();
+    obj.hello();
+    </script>
+</html>

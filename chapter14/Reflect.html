@@ -1,0 +1,32 @@
+<html>
+   
+    <div id="content">
+
+    </div>
+    <script>
+        function display(a,b)
+        {
+            console.log("A ",a," B ",b);
+        }
+        Reflect.apply(display,null,["One","Two"]);
+
+        class Human
+        {
+            constructor(name)
+            {
+                console.log("Human constructor name ",name);
+                this.name = name;
+            }
+        }
+        let obj = Reflect.construct(Human,["TK"]);
+        console.log("Obj ",obj);
+
+        console.log("Get ",Reflect.get(obj,"name"));
+        console.log("Owns key ",Reflect.ownKeys(obj));
+
+        obj = Object.create({
+            name : "Tk"
+        });
+        console.log("Owns key ",Reflect.ownKeys(obj));
+    </script>
+</html>

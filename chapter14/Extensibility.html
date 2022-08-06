@@ -1,0 +1,25 @@
+<html>
+   
+ 
+    <script>
+    let model = {
+        name : "Tk",
+        age : 37
+    };
+    console.log("IsExtensible ",Object.isExtensible(model));
+    Object.preventExtensions(model);
+    console.log("IsExtensible ",Object.isExtensible(model));
+
+    let obj = {};
+    obj.__proto__ = model;
+    console.log("Obj ",obj);
+
+    console.log("Reflect ",Reflect.isExtensible(model));
+
+    Object.seal(model);
+    model.newPro = 200;
+    Object.freeze(model);
+    model.age = 200;
+    console.log("Model ",model);
+    </script>
+</html>

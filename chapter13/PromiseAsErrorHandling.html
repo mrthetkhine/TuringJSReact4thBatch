@@ -1,0 +1,19 @@
+<html>
+   
+   
+    <script>
+      function div(a,b)
+      {
+        if(b==0)
+        {
+            return Promise.reject("Divisor is zero");
+        }
+        else
+        {
+            return Promise.resolve(a/b);
+        }
+      }
+      div(10,2).then( result=>console.log("Result ",result));
+      div(10,0).then( result=>console.log("Result ",result),error=>console.log("Error ",error));
+    </script>
+</html>

@@ -1,0 +1,48 @@
+<html>
+   
+   <div id="view">
+        <div>Name <span id="modelName"></span></div>
+        <div>Age <span id="modelAge"></span></div>
+   </div>
+    <script>
+    let model = {
+        name : "Tk",
+        age : 37
+    };
+    function updateView()
+    {
+        document.getElementById("modelName").innerText = model.name;
+        document.getElementById("modelAge").innerText = model.age;
+    }
+    //updateView();
+
+    function lib(obj)
+    {
+        let newObj = {};
+        for(let prop in obj)
+        {
+            console.log("Prop ",prop );
+            Object.defineProperty(newObj,prop,{
+                get()
+                {
+                    console.log("Call get "+ prop);
+                    return obj[prop];
+                },
+                set(newValue)
+                {
+                    console.log("Call setter "+ prop);
+                    obj[prop] = newValue;
+                    updateView();
+                }
+                
+            });
+        }
+        return newObj;
+    }
+    model = lib(model);
+    console.log("Model ",model)
+    model.age = 200;
+    console.log("Model ", model.age);
+    
+    </script>
+</html>

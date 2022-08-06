@@ -1,0 +1,34 @@
+<html>
+   
+   
+    <script>
+      
+      async function getData()
+      {
+        let url = "https://jsonplaceholder.typicode.com/todos/1";
+        let response = await fetch(url); 
+        let todo =  response.json();
+        return todo;//return Promise.resolve(todo);
+      }
+      getData().then(todo=>console.log("To do ",todo));
+
+      console.log(getData());
+
+      async function getTen()
+      {
+        return 10;
+      }
+      getTen().then(data=>console.log("Get ten Data ",data));
+
+      async function f4() {
+        try {
+            const z = await Promise.reject(30);
+            console.log("Z ",z);
+        } catch (e) {
+            console.error(e); // 30
+        }
+     }
+
+     f4();
+    </script>
+</html>
