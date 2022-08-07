@@ -1,0 +1,40 @@
+<html>
+   
+   <div id="parent">
+        Parent
+        <div id="child"> 
+            Child
+
+        </div>
+   </div>
+    <script > 
+        
+
+        document.getElementById("parent").addEventListener("click",(event)=>{
+           console.log("Parent clicked");
+        },{
+            capture:true
+        });
+        document.getElementById("child").addEventListener("click",(event)=>{
+           console.log("Child clicked");
+         
+           
+        },{
+            capture:true
+        });
+        document.getElementById("child").addEventListener("click",(event)=>{
+           console.log("Child clicked 2");
+           
+        },{
+            capture:true
+        });
+        document.addEventListener("click",(event)=>{
+            console.log("On right click");
+            event.preventDefault();
+        },{
+            capture:true
+        });
+    </script>
+    
+
+</html>

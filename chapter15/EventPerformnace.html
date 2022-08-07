@@ -1,0 +1,36 @@
+<html>
+   
+   <table>
+        <tbody id="parent" onclick="console.log('Parent Clicked on tag')">
+                <tr>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                </tr>
+        </tbody>
+   </table>
+    <script > 
+        /*
+         document.getElementById("parent").onclick = function()
+         {
+            console.log("Parent clicke with onclick");
+         }
+         document.getElementById("parent").onclick = function()
+         {
+            console.log("Parent clicke with onclick2");
+         }
+         */
+        document.getElementById("parent").addEventListener("click",(event)=>{
+           console.log("Parent clicked ",event.target);
+        },{
+            once:true,
+        });
+        
+    </script>
+    
+
+</html>

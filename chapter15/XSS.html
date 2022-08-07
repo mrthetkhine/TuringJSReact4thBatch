@@ -1,0 +1,29 @@
+<html>
+   
+    <textarea id="comment">
+    </textarea>
+
+    <button id="btnAdd" type="button">
+        Add
+    </button>
+    <div id="container">
+        <script>
+            alert("Hello");
+        </script>
+    </div>
+    <script > 
+        
+
+        document.getElementById("btnAdd").addEventListener("click",(event)=>{
+            console.log("Event ",event);
+            let divContainer = document.getElementById("container");
+            let commentText = document.getElementById("comment").value;
+            let newNode = document.createElement("div");
+            newNode.innerHTML = commentText;
+            divContainer.appendChild(newNode);
+            console.log("DOne");
+        });
+    </script>
+    
+
+</html>

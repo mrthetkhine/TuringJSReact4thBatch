@@ -1,0 +1,33 @@
+<html>
+   
+   <div id="parent">
+        Parent
+        <div id="child"> 
+            Child
+
+        </div>
+   </div>
+    <script > 
+        
+
+        document.getElementById("parent").addEventListener("click",(event)=>{
+           console.log("Parent clicked");
+        });
+        document.getElementById("child").addEventListener("click",(event)=>{
+           console.log("Child clicked");
+           //event.stopPropagation();
+           event.stopImmediatePropagation();
+           
+        });
+        document.getElementById("child").addEventListener("click",(event)=>{
+           console.log("Child clicked 2");
+           
+        });
+        document.addEventListener("contextmenu",(event)=>{
+            console.log("On right click");
+            event.preventDefault();
+        });
+    </script>
+    
+
+</html>

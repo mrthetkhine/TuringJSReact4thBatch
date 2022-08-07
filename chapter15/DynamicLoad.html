@@ -1,0 +1,42 @@
+<html>
+   
+    <button id="btnLoad" type="button">
+        Load
+    </button>
+    <script > 
+        let data ="Data inside main script";
+        function importJS(url)
+        {
+            return new Promise((resolve,reject)=>{
+                let script = document.createElement("script");
+                script.src = url;
+
+                script.onload = ()=>{
+                    console.log("On load");
+                    resolve();
+                }
+                script.onerror = ()=>{
+                    reject();
+                }
+                document.head.append(script);
+            })
+        }
+        document.getElementById("btnLoad").addEventListener("click",()=>{
+            importJS("lib.js").then(()=>{
+                hello();
+            });
+        });
+
+        addEventListener('DOMContentLoaded', (event) => {
+            console.log("Dom ready");
+        });
+        window.onerror = function(error)
+        {
+            console.log("got error ",error);
+        }
+        ege;
+        console.log("Done");
+    </script>
+    
+
+</html>
