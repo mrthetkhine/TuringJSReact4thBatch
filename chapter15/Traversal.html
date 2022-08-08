@@ -1,0 +1,43 @@
+<html>
+   <style>
+    .header
+    {
+        background-color: blue;
+    }
+   </style>
+   <body id="data">
+        <div id="container" color="green">
+            <span>Helo</span>
+            <p>Helo</p>
+        </div>
+        <div id="another" data-section-no="Data inside data-set"> Another</div>
+        <a href="http://www.google.com" id="link">Go</a>
+   </body>
+
+   
+    <script > 
+       let container = document.getElementById("container");
+       console.log("Parent node ",container.parentNode);
+       console.log("Children node ",container.childNodes);
+       console.log("firstChild ",container.firstChild);
+       console.log("last child ",container.lastChild);
+       console.log("next sibling ",container.nextSibling);
+       console.log("next sibling node ",container.nextElementSibling);
+
+       console.log("Container attribute ",container.getAttribute("color"));
+
+       let link = document.getElementById("link");
+       console.log("Href ",link.getAttribute("href"));
+       link.setAttribute("href","http://www.yahoo.com");
+
+       container.classList.add("header");
+       console.log("Class ",container.classList);
+
+       container.classList.remove("header");
+
+       let another = document.getElementById("another");
+       console.log("Data ",another.dataset.sectionNo);
+    </script>
+    
+
+</html>

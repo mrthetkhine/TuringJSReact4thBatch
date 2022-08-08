@@ -1,0 +1,38 @@
+<html>
+   
+   <body>
+        <div id="container"> Container</div>
+        <div class="header">Div Header</div>
+        <span class="header">Span Header</span>
+
+        <table id="tblContainer">
+            <tbody>
+                <tr>
+                    <td>One</td>
+                </tr>
+                <tr>
+                    <td>Two</td>
+                </tr>
+            </tbody>
+        </table>
+   </body>
+
+   
+    <script > 
+        let divContainer = document.getElementById("container");
+        console.log("Div container ",divContainer);
+      
+        let header = document.querySelector(".header");
+        console.log("header ",header);
+
+        let headers = document.querySelectorAll(".header");
+        console.log("headers ",headers);
+
+        document.getElementById("tblContainer").addEventListener("click",(event)=>{
+            let tableRow = event.target.closest("tr");
+            console.log("TableRow ",tableRow);
+        })
+    </script>
+    
+
+</html>

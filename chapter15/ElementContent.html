@@ -1,0 +1,29 @@
+<html>
+   <style>
+    .header
+    {
+        background-color: blue;
+    }
+   </style>
+   <body id="data">
+        <div id="container" color="green">
+         Original
+        </div>
+        <div id="another" data-section-no="Data inside data-set"> Another</div>
+        
+   </body>
+
+   
+    <script > 
+       let container = document.getElementById("container");
+        //container.innerHTML = "<h1>Hello</h1>";
+        //container.innerText = "<h1>Hello</h1>";
+
+        //container.outerHTML = "<h1>Hello</h1>";
+        //container.insertAdjacentHTML("beforebegin", "<h1>Hello</h1>");
+
+        container.textContent = "Hello text"
+    </script>
+    
+
+</html>

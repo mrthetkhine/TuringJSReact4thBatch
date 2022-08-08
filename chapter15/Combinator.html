@@ -1,0 +1,55 @@
+<html>
+   
+   <body>
+        <article>
+            Article 
+            <p> Child of article</p>
+        </article>
+        <div> Paragraph outside
+            <div>Div </div>
+            <p> 
+                <h1> H1 under p</h1>
+
+            </p>
+        </p>
+        <div>
+            <div>
+                One
+            </div>
+            <span>
+                Two
+            </span>
+        </div>
+        <div>
+            <h1>H1 </h1>
+            <div>No</div>
+            <span>Span </span>
+        </div>
+   </body>
+
+   <style>
+       article > p , h2
+       {
+        color:blue;
+       }
+       div h1
+       {
+        color:yellow;
+       }
+       div ~ span
+       {
+        color:blue;
+       }
+       h1 + span
+       {
+        color:red;
+       }
+   </style>
+    <script > 
+        
+
+      
+    </script>
+    
+
+</html>
