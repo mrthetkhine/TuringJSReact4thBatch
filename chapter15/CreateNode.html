@@ -1,0 +1,54 @@
+<html>
+   <style>
+    .header
+    {
+        background-color: blue;
+    }
+   </style>
+   <body id="data">
+        <div id="container" color="green">
+         Original
+        </div>
+        <div id="another" data-section-no="Data inside data-set"> Another</div>
+        
+        <button id="btnRemove" type="button"> Remov h1 Node</button>
+        <button id="btnReplace" type="button"> Replace h2 Node</button>
+   </body>
+
+   
+    <script > 
+       let container = document.getElementById("container");
+       
+       let h1Node = document.createElement("h1");
+       h1Node.textContent = "Hello H1";
+
+       container.after(h1Node);
+
+       let h2Node = document.createElement("h2");
+       h2Node.textContent = "Hello H2";
+
+       container.before(h2Node);
+
+       let h3Node = document.createElement("h3");
+       h3Node.textContent = "Hello H3 prepend";
+
+       container.prepend(h3Node);
+
+       let h4Node = document.createElement("h4");
+       h4Node.textContent = "Hello H4 append";
+
+       container.append(h4Node);
+
+       document.getElementById("btnRemove").addEventListener("click",()=>{
+        h1Node.remove();
+       });
+       document.getElementById("btnReplace").addEventListener("click",()=>{
+        let anotherNode = document.createElement("div");
+        anotherNode.textContent = "Div Content";
+        h4Node.replaceWith(anotherNode);
+       });
+
+    </script>
+    
+
+</html>

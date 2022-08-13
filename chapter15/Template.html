@@ -1,0 +1,36 @@
+<html>
+    <template id="productRow">
+        <tr>
+          <td class="record"></td>
+          <td>ELement</td>
+        </tr>
+      </template>
+   <body id="data">
+    <table id="productTable">
+        <thead>
+          <tr>
+            <td>UPC_Code</td>
+            <td>Product_Name</td>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- existing data could optionally be included here -->
+        </tbody>
+      </table>
+        <button type="button" id="btnAdd">Add</button>
+   </body>
+
+   
+    <script > 
+       let btnAdd = document.getElementById("btnAdd");
+      
+       btnAdd.addEventListener("click",(mouseEvent)=>{
+        let tbody = document.getElementById("productTableBody");
+        let rowTemplate = document.getElementById("productRow");
+        let cloneNode = rowTemplate.content.cloneNode(true);
+        tbody.append(cloneNode);
+       })
+    </script>
+    
+
+</html>

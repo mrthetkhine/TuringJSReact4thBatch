@@ -1,0 +1,33 @@
+<html>
+   <style>
+    .header
+    {
+        background-color: blue;
+    }
+   </style>
+   <body id="data">
+        <div id="container" color="green">
+         Original
+        </div>
+        <div id="another" data-section-no="Data inside data-set"> Another</div>
+        
+        <button id="btnRemove" type="button"> Remov h1 Node</button>
+        <button id="btnReplace" type="button"> Replace h2 Node</button>
+   </body>
+
+   
+    <script > 
+       let container = document.getElementById("container");
+       
+       container.style.color = "blue";
+
+       container.style.cssText  = "color:green;background:gray";
+
+       document.head.insertAdjacentHTML(
+            "beforeend",
+            "<style>body{transform:rotate(180deg)}</style>"
+        );
+    </script>
+    
+
+</html>

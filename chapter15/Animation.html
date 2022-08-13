@@ -1,0 +1,26 @@
+<html>
+   <style>
+    .transparent { opacity: 0; }
+    .fadeable { transition: opacity .5s ease-in }
+   </style>
+   <body id="data">
+        <div id="container" color="green" class="transparent">
+         Original
+        </div>
+       
+        
+        <button id="btnAnimate" type="button"> Animate</button>
+        
+   </body>
+
+   
+    <script > 
+       document.getElementById("btnAnimate").addEventListener("click",()=>{
+        let classList = document.getElementById("container").classList;
+        classList.remove("transparent");
+        classList.add("fadeable");
+       });
+    </script>
+    
+
+</html>

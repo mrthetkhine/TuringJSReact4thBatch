@@ -1,0 +1,33 @@
+<html>
+   <style>
+    .transparent { 
+        width: 100px;
+        height: 50px;
+        background: blue;
+     }
+    .fadeable { transition: opacity .5s ease-in }
+   </style>
+   <body id="data">
+        <div id="container" color="green" class="transparent">
+         Original
+        </div>
+       
+        
+        <button id="btnAnimate" type="button"> Animate</button>
+        
+   </body>
+
+   
+    <script > 
+       let container = document.getElementById("container");
+       console.log("Rect ",container.getBoundingClientRect());
+
+       document.addEventListener("click",(mouseEvent)=>{
+        console.log("Event ",mouseEvent);
+        let element = document.elementFromPoint(mouseEvent.clientX,mouseEvent.clientY);
+        console.log("Element ",element);
+       })
+    </script>
+    
+
+</html>

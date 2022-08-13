@@ -1,0 +1,33 @@
+<html>
+   <style>
+    .transparent { 
+        width: 100px;
+      
+        background: blue;
+     }
+    .fadeable { transition: opacity .5s ease-in }
+    #space{
+        height: 2500px;
+    }
+   </style>
+   <body id="data">
+        <div id="container" color="green" class="transparent">
+         Original
+        </div>
+       
+        <div id="space"> </div>
+        <button id="btnScroll" type="button"> Scroll</button>
+        
+   </body>
+
+   
+    <script > 
+       let btnScroll = document.getElementById("btnScroll");
+      
+       btnScroll.addEventListener("click",(mouseEvent)=>{
+        window.scrollTo({left:0,top:0,behavior: "smooth"});
+       })
+    </script>
+    
+
+</html>
