@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <script>
+        var newElem;
+      
+        function outer() {
+            var someText = new Array(1000000);
+            var elem = newElem;
+      
+            function inner() {
+                if (elem) return someText;
+            }
+      
+            return function () {};
+        }
+      
+        setInterval(function () {
+            console.log("Set interval");
+            newElem = outer();
+        }, 400);
+    </script> 
+</head>
+</html>

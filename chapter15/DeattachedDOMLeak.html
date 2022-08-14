@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+    </body>
+<head>
+  
+    <script>
+        var demo = document.createElement("div");
+        demo.id = "myText";
+        document.body.appendChild(demo);
+        var lib = {
+            text: document.getElementById('myText')
+        };
+    
+        function createFunction() {
+            lib.text.innerHTML = "hello World";
+        }
+        createFunction();
+    
+        function deleteFunction() {
+            document.body.removeChild(document.getElementById('myText'));
+        }
+        deleteFunction();
+    </script> 
+</head>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  
+   
+    <script > 
+       let name = window.sessionStorage.username;
+       if(!name)
+       {
+        name = prompt("What is your name");
+        window.sessionStorage.username = JSON.stringify({name });
+       }
+       else
+       {
+        let obj = JSON.parse(name);
+        console.log("Name is ",obj);
+       }
+    </script>
+    
+
+</html>
