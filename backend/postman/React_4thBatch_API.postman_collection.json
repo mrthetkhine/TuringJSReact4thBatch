@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "51dc36dd-bca1-4360-af16-cb4340bd01d8",
+		"name": "React_4thBatch_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5339096"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GetAllMovie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGNkMmMxYjA1YjRiZmI0YzE0YWUwZCIsImlhdCI6MTY2MjE5ODE3OX0.VqEGPsPHPJC80FYiUzJeWKPgQ_kQQjts-1LQbtUTbDk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGNkMmMxYjA1YjRiZmI0YzE0YWUwZCIsImlhdCI6MTY2MjE5ODE3OX0.VqEGPsPHPJC80FYiUzJeWKPgQ_kQQjts-1LQbtUTbDk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/movies/630b3f62882688c9117e36be?Authorization",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"630b3f62882688c9117e36be"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchMovieByTitle",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGNkMmMxYjA1YjRiZmI0YzE0YWUwZCIsImlhdCI6MTY2MjE5ODE3OX0.VqEGPsPHPJC80FYiUzJeWKPgQ_kQQjts-1LQbtUTbDk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/movies/title/Titanic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"title",
+								"Titanic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveMovie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGNkMmMxYjA1YjRiZmI0YzE0YWUwZCIsImlhdCI6MTY2MjE5ODE3OX0.VqEGPsPHPJC80FYiUzJeWKPgQ_kQQjts-1LQbtUTbDk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Titanic Two\",\n    \"director\":{\n        \"name\":\"Jame Cameron\",\n        \"phoneNo\" : \"09993\"\n    },\n    \"year\":2000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpateMovie",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGNkMmMxYjA1YjRiZmI0YzE0YWUwZCIsImlhdCI6MTY2MjE5ODE3OX0.VqEGPsPHPJC80FYiUzJeWKPgQ_kQQjts-1LQbtUTbDk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Titanic Update\",\n    \"director\": {\n        \"name\": \"Jame Cameron\",\n        \"phoneNo\": \"09993\",\n        \"_id\": \"630b3f62882688c9117e36bf\"\n    },\n    \"year\": 1995\n   \n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/movies/630b3f62882688c9117e36be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"movies",
+								"630b3f62882688c9117e36be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/630b4584a3ee760187d1ed47",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"630b4584a3ee760187d1ed47"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "SaveReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\":\"630b3f62882688c9117e36be\",\n    \"rating\":4,\n    \"review\":\"Another review\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReview",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie\": \"630b3f62882688c9117e36be\",\n    \"rating\": 4,\n    \"review\": \"Another review updated\",\n    \"_id\": \"630cba4e32ba96fa3d4160f7\"\n    \n}"
+						},
+						"url": {
+							"raw": "{{url}}/reviews/630cba4e32ba96fa3d4160f7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews",
+								"630cba4e32ba96fa3d4160f7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateReview",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"movie\": \"630b3f62882688c9117e36be\",\n    \"rating\": 4,\n    \"review\": \"Another review updated\",\n    \"_id\": \"630cba4e32ba96fa3d4160f7\"\n    \n}"
+								},
+								"url": {
+									"raw": "{{url}}/reviews/630cba4e32ba96fa3d4160f7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"reviews",
+										"630cba4e32ba96fa3d4160f7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"105-EfylsZYb+J+OoGgqBKh2cdaTqI4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Aug 2022 13:38:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"630cba4e32ba96fa3d4160f7\",\n    \"movie\": {\n        \"_id\": \"630b3f62882688c9117e36be\",\n        \"title\": \"Titanic Update\",\n        \"director\": {\n            \"name\": \"Jame Cameron\",\n            \"phoneNo\": \"09993\",\n            \"_id\": \"630b3f62882688c9117e36bf\"\n        },\n        \"year\": 1995,\n        \"__v\": 0\n    },\n    \"rating\": 4,\n    \"review\": \"Another review updated\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "GetAllReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/reviews/630b5269cdfb334d1eeddb12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews",
+								"630b5269cdfb334d1eeddb12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetReviewByMovieId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/reviews/movie/630b3f62882688c9117e36be",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reviews",
+								"movie",
+								"630b3f62882688c9117e36be"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\":\"admin\",\n    \"password\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Barer JWTOken",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\":\"admin\",\n    \"password\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SaveUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"TK\",\n    \"age\":37\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SaveUserOk",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"TK\",\n    \"age\":37\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-HFFrmc0wFN/nDem0cSHu+R1p71M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 27 Aug 2022 10:14:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"TK\",\n    \"age\": 37,\n    \"id\": 100\n}"
+				}
+			]
+		}
+	]
+}

@@ -41,8 +41,8 @@ mongoose.connect(db, {
     .catch(err => console.log(err));
 
 app.use('/', indexRouter);
-app.use('/api/users',auth.verifyUserToken,usersRouter);
-app.use('/api/movies', movieRouter);
+app.use('/api/users',usersRouter);
+app.use('/api/movies',auth.verifyUserToken, movieRouter);
 app.use('/api/reviews', reviewRouter);
 
 // catch 404 and forward to error handler
