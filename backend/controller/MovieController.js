@@ -1,17 +1,21 @@
 var movieService = require('./../services/MovieService')
 
-const handle = async function({req, res, next},func,httpErrorCode)
+const handle = function(func,httpErrorCode)
 {
-    try
+    return async function(req,res,next)
     {
-        func(req,res,next).catch(err=> {
-            return res.status(httpErrorCode).json({message: err})
-        });
-    }catch (err)
-    {
-        console.log("Error is ",err);
-        await res.status(httpErrorCode).json({message: err})
+        try
+        {
+            func(req,res,next).catch(err=> {
+                return res.status(httpErrorCode).json({message: err})
+            });
+        }catch (err)
+        {
+            console.log("Error is ",err);
+            await res.status(httpErrorCode).json({message: err})
+        }
     }
+
 }
 async function getAllMovieHandler(req,res,next)
 {
@@ -22,7 +26,8 @@ async function getAllMovieHandler(req,res,next)
 const getAllMovie = async function (req, res, next) {
     console.log('Movie controller user ',req.user);
 
-    await handle({req,res,next},getAllMovieHandler,400);
+    await handle(getAllMovieHandler,400)
+          (req,res,next);
 
 }
 async function getMovieByIdHandler(req,res,next)
@@ -36,7 +41,8 @@ async function getMovieByIdHandler(req,res,next)
 }
 const getMovieById = async function (req,res,next)
 {
-    await handle({req, res, next},getMovieByIdHandler,404);
+    await handle(getMovieByIdHandler,404)
+                (req,res,next);
 }
 const findMovieByTitle = async function (req,res,next)
 {

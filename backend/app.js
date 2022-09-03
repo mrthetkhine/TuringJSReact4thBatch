@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const { db } = require('./config/database');
+let auth = require('./middleware/auth');
 /*
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -40,7 +41,7 @@ mongoose.connect(db, {
     .catch(err => console.log(err));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users',auth.verifyUserToken,usersRouter);
 app.use('/api/movies', movieRouter);
 app.use('/api/reviews', reviewRouter);
 
