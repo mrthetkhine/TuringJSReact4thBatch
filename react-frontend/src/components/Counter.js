@@ -6,13 +6,26 @@ export default class Counter extends React.Component
         this.state = {
             counter : this.props.initalValue
         }
+        this.increment = this.increment.bind(this);
+        this.decrement = this.decrement.bind(this);
     }
-    increment()
+    componentDidMount() {
+        console.log("componentDidMount");
+    }
+
+    componentWillUnmount() {
+        console.log("componentWillUnmount");
+    }
+    increment(event)
     {
-        console.log('Inc');
-        this.setState({
-            counter :this.state.counter +1
-        })
+        console.log('Inc ', event);
+       /* this.setState({
+            counter :this.state.counter + this.props.incValue
+        });*/
+        this.setState((state, props) => ({
+            counter: state.counter + props.incValue
+        }));
+
     }
     decrement()
     {
@@ -25,9 +38,11 @@ export default class Counter extends React.Component
         console.log("Render");
         return (<div>
             Counter
-            <button type="button" onClick={()=>this.increment()}>+</button>
+            <button className="btn btn-primary"
+                    type="button"
+                    onClick={(event)=>this.increment(event)}>+</button>
             &nbsp;{ this.state.counter}&nbsp;
-            <button type="button" onClick={()=>this.decrement()}>-</button>
+            <button className="btn btn-primary" type="button" onClick={this.decrement}>-</button>
         </div>);
     }
 }
