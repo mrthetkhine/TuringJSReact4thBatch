@@ -8,6 +8,10 @@ import Counter from "./components/Counter";
 import Greeting from "./components/function_component/Greeting";
 import ListDemo from "./components/ListDemo";
 import FormDemo from "./components/FromDemo";
+import BasicForm from "./components/formik/BasicForm";
+import YupForm from "./components/formik/YupForm";
+import ToDoList from "./components/ToDoList";
+import WelcomeDialog from "./components/WelcomeDialog";
 
 function App() {
     let obj = {
@@ -28,7 +32,11 @@ function App() {
           {/*<Counter initalValue={4} incValue={2}/>*/}
           {/*<Greeting isLoggedIn={false}/>*/}
          {/* <ListDemo/>*/}
-          <FormDemo/>
+         {/* <FormDemo/>*/}
+          {/*<BasicForm/>*/}
+         {/* <YupForm/>*/}
+        {/*  <ToDoList/>*/}
+          <WelcomeDialog/>
       </header>
     </div>
   );

@@ -1,0 +1,12 @@
+.to-do-item-container
+{
+    min-width: 250px;
+}
+.to-do-item
+{
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+}
