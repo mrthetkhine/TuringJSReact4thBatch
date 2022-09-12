@@ -1,0 +1,18 @@
+.header
+{
+    border:1px solid gray;
+    padding :15px;
+    font-weight: bold;
+}
+.active
+{
+    color: #0a53be;
+}
+.tab-body
+{
+    margin-top:15px;
+    border:1px solid gray;
+    border-radius: 10px;
+    min-height: 200px;
+    min-width: 500px;
+}

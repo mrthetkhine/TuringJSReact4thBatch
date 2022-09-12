@@ -26,7 +26,17 @@ import ThemeContext from "./components/context/ThemeContext";
 import ContextRootUi from "./components/context/ContextRootUi";
 import ErrorBoundary from "./components/error-boundary/ErrorBoundary";
 import BuggyComponent from "./components/error-boundary/BuggyComponent";
+import logProps from "./components/hoc/logProps";
 import FragmentDemo from "./components/fragment/FragmentDemo";
+import ForwardRefDemo from "./components/forward-ref/ForwardRefDemo";
+import DatePicker from "./components/thrid_party/DatePicker";
+import DynamicComponent from "./components/jsx/DynamicComponent";
+import RepeatDemo from "./components/jsx/RepeatDemo";
+import Tab from "./components/tab/Tab";
+import RenderPropertyDemo from "./components/render-property/RenderPropertyDemo";
+import PortalDemo from "./components/portal/PortalDemo";
+import FunctionCounter from "./components/function_component/FunctionCounter";
+const FragmentExample = logProps(FragmentDemo);
 function App() {
     let obj = {
         name : "Tk",
@@ -35,6 +45,7 @@ function App() {
         text : "How are you",
         profile : obj
     }
+    let headers = ["Profile","About","Admin"];
   return (
     <div className="App">
       <header className="App-header">
@@ -59,7 +70,26 @@ function App() {
         {/*<ErrorBoundary>
             <BuggyComponent/>
         </ErrorBoundary>*/}
-          <FragmentDemo/>
+        {/*  <FragmentDemo/>*/}
+        {/*  <ForwardRefDemo/>*/}
+        {/*  <FragmentExample loading={false}/>*/}
+        {/*  <DatePicker/>*/}
+        {/*  <DynamicComponent userType={"Admin"}/>*/}
+       {/*   <RepeatDemo/>*/}
+         {/* <Tab headers={headers}>
+              <div>
+                  Profile info
+              </div>
+              <div>
+                  About Info
+              </div>
+              <div>
+                  Admin Content info
+              </div>
+          </Tab>*/}
+         {/* <RenderPropertyDemo/>*/}
+          {/*<PortalDemo/>*/}
+          <FunctionCounter/>
       </header>
     </div>
   );
