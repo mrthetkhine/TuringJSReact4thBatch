@@ -36,6 +36,9 @@ import Tab from "./components/tab/Tab";
 import RenderPropertyDemo from "./components/render-property/RenderPropertyDemo";
 import PortalDemo from "./components/portal/PortalDemo";
 import FunctionCounter from "./components/function_component/FunctionCounter";
+import ToDoListWithHook from "./components/function_component/hook/ToDoListWithHook";
+import EffectHookDemo from "./components/function_component/hook/EffectHookDemo";
+import ContextHookDemo from "./components/function_component/hook/ContextHookDemo";
 const FragmentExample = logProps(FragmentDemo);
 function App() {
     let obj = {
@@ -60,7 +63,7 @@ function App() {
          {/* <FormDemo/>*/}
           {/*<BasicForm/>*/}
          {/* <YupForm/>*/}
-        {/*  <ToDoList/>*/}
+        {/*  <ToDoListWithHook/>*/}
          {/* <WelcomeDialog/>*/}
         {/*  <FocusDemo/>*/}
           {/*<Suspense fallback={<div>Loading...</div>}>
@@ -72,10 +75,10 @@ function App() {
         </ErrorBoundary>*/}
         {/*  <FragmentDemo/>*/}
         {/*  <ForwardRefDemo/>*/}
-        {/*  <FragmentExample loading={false}/>*/}
+        {/*  <FragmentExample loading={true}/>*/}
         {/*  <DatePicker/>*/}
-        {/*  <DynamicComponent userType={"Admin"}/>*/}
-       {/*   <RepeatDemo/>*/}
+         {/* <DynamicComponent userType={"User"}/>*/}
+          {/*<RepeatDemo/>*/}
          {/* <Tab headers={headers}>
               <div>
                   Profile info
@@ -89,7 +92,10 @@ function App() {
           </Tab>*/}
          {/* <RenderPropertyDemo/>*/}
           {/*<PortalDemo/>*/}
-          <FunctionCounter/>
+          {/*<FunctionCounter/>*/}
+         {/* <ToDoListWithHook/>*/}
+          <ContextHookDemo/>
+         {/* <EffectHookDemo/>*/}
       </header>
     </div>
   );

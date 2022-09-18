@@ -13,6 +13,7 @@ function Header(props)
             </span>);
 }
 export default class Tab extends React.PureComponent
+//export default class Tab extends React.Component
 {
     constructor(props) {
         super(props);

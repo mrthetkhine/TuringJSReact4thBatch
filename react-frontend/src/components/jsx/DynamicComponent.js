@@ -24,11 +24,11 @@ export default class DynamicComponent extends React.Component
     }
 
     render() {
-        let Componet = components[this.props.userType];
+        let Component = components[this.props.userType];
         let data = "<h1>Hello</h1>";
         return (
             <div>
-                <Componet/>
+                <Component/>
                 {data}
             </div>
         );

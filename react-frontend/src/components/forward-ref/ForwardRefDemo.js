@@ -8,6 +8,7 @@ export default class ForwardRefDemo extends React.Component
 {
     render() {
         const ref = React.createRef();
+        console.log("Ref ",ref);
         return (
             <div>
 
