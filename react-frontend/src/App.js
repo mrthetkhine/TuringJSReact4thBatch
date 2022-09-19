@@ -39,6 +39,9 @@ import FunctionCounter from "./components/function_component/FunctionCounter";
 import ToDoListWithHook from "./components/function_component/hook/ToDoListWithHook";
 import EffectHookDemo from "./components/function_component/hook/EffectHookDemo";
 import ContextHookDemo from "./components/function_component/hook/ContextHookDemo";
+import ReducerHookDemo from "./components/function_component/hook/ReducerHookDemo";
+import ToDoListWithReducer from "./components/function_component/hook/ToDoListWithReducer";
+import MemoHookDemo from "./components/function_component/hook/MemoHookDemo";
 const FragmentExample = logProps(FragmentDemo);
 function App() {
     let obj = {
@@ -94,8 +97,11 @@ function App() {
           {/*<PortalDemo/>*/}
           {/*<FunctionCounter/>*/}
          {/* <ToDoListWithHook/>*/}
-          <ContextHookDemo/>
+         {/* <ContextHookDemo/>*/}
          {/* <EffectHookDemo/>*/}
+         {/* <ReducerHookDemo/>*/}
+         {/* <ToDoListWithReducer/>*/}
+          <MemoHookDemo/>
       </header>
     </div>
   );
