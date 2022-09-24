@@ -1,4 +1,12 @@
 import React, { Suspense } from 'react';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+
+
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -42,6 +50,15 @@ import ContextHookDemo from "./components/function_component/hook/ContextHookDem
 import ReducerHookDemo from "./components/function_component/hook/ReducerHookDemo";
 import ToDoListWithReducer from "./components/function_component/hook/ToDoListWithReducer";
 import MemoHookDemo from "./components/function_component/hook/MemoHookDemo";
+import RenderingExample from "./components/function_component/hook/RenderingExample";
+import UseRefDemo from "./components/function_component/hook/UseRefDemo";
+import UseImperativeHandleDemo from "./components/function_component/hook/UseImperativeHandleDemo";
+import UseLayoutDemo from "./components/function_component/hook/UseLayoutDemo";
+import UseTransitionDemo from "./components/function_component/hook/UseTransitionDemo";
+import UseIdDemo from "./components/function_component/hook/UseIdDemo";
+import About from "./pages/About";
+import Users from "./pages/Users";
+import Home from "./pages/Home";
 const FragmentExample = logProps(FragmentDemo);
 function App() {
     let obj = {
@@ -55,6 +72,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
         {/*  <HelloWorld obj={obj} />*/}
 
        {/* <HelloWorld  obj={obj}/>
@@ -101,8 +119,26 @@ function App() {
          {/* <EffectHookDemo/>*/}
          {/* <ReducerHookDemo/>*/}
          {/* <ToDoListWithReducer/>*/}
-          <MemoHookDemo/>
+         {/* <MemoHookDemo/>*/}
+         {/* <RenderingExample/>*/}
+          {/*<UseRefDemo/>*/}
+         {/* <UseImperativeHandleDemo/>*/}
+         {/* <UseLayoutDemo/>*/}
+         {/* <UseTransitionDemo/>*/}
+          <UseIdDemo/>
       </header>
+        {/*<div>
+            <h1>Bookkeeper</h1>
+            <nav
+                style={{
+                    borderBottom: "solid 1px",
+                    paddingBottom: "1rem",
+                }}
+            >
+                <Link to="/home">Home</Link> |{" "}
+                <Link to="/about">About</Link>
+            </nav>
+        </div>*/}
     </div>
   );
 }
