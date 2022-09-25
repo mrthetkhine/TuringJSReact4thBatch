@@ -3,8 +3,10 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    Link,
+    Outlet, NavLink
 } from "react-router-dom";
+
 
 
 import logo from './logo.svg';
@@ -69,9 +71,20 @@ function App() {
         profile : obj
     }
     let headers = ["Profile","About","Admin"];
-  return (
+
+    function getActiveStyle() {
+        return ({isActive}) => {
+            return {
+               /* display: "block",
+                margin: "1rem 0",*/
+                color: isActive ? "blue" : "",
+            };
+        };
+    }
+
+    return (
     <div className="App">
-      <header className="App-header">
+
 
         {/*  <HelloWorld obj={obj} />*/}
 
@@ -125,8 +138,8 @@ function App() {
          {/* <UseImperativeHandleDemo/>*/}
          {/* <UseLayoutDemo/>*/}
          {/* <UseTransitionDemo/>*/}
-          <UseIdDemo/>
-      </header>
+        {/*  <UseIdDemo/>*/}
+
         {/*<div>
             <h1>Bookkeeper</h1>
             <nav
@@ -139,6 +152,42 @@ function App() {
                 <Link to="/about">About</Link>
             </nav>
         </div>*/}
+
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                        <NavLink to="/"
+                                 style={getActiveStyle()}
+                                 className={"nav-link"}>Home</NavLink> &nbsp;
+                    </li>
+                    <li className="nav-item active">
+                        <NavLink to="/user"
+                                 style={getActiveStyle()}
+                                 className={"nav-link"}>Users</NavLink> &nbsp;
+
+                    </li>
+                    <li className="nav-item active">
+                        <NavLink to="/movies"
+                                 style={getActiveStyle()}
+                                 className={"nav-link"}>Movie</NavLink> &nbsp;
+
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink to="/about"
+                                 style={getActiveStyle()}
+                                 className={"nav-link"}>About</NavLink> &nbsp;
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </nav>
+        <Outlet/>
+
     </div>
   );
 }
