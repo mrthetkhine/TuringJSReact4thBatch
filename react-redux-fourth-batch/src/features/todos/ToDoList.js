@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {selectToDo,addToDo,removeTodo,saveToDo} from "./todoSlice";
 import {nextId} from "../../util/Util";
+import {nanoid} from "@reduxjs/toolkit";
 
-const uniqueId = nextId(2);
+const uniqueId = nanoid;
 
 export default function ToDoList(props)
 {
@@ -15,7 +16,7 @@ export default function ToDoList(props)
         console.log("New Item ",newItem);
         let payload = {
             id :uniqueId(),
-            text : newItem
+            title : newItem
         };
         let action = addToDo(payload);
         console.log('Action ',action);
@@ -49,7 +50,7 @@ export default function ToDoList(props)
         {todos.map((item)=>{
             return (
                 <div key={item.id}>
-                    {item.text} &nbsp;
+                    {item.title} &nbsp;
                     <button type={"button"}
                             className={"btn btn-danger"}
                             onClick={()=>removeToDoHandler(item)}>

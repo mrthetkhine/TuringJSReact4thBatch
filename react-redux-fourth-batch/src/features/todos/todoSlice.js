@@ -1,19 +1,20 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {counterSlice, incrementAsync} from "../counter/counterSlice";
 import {fetchCount} from "../counter/counterAPI";
-import {saveToDoApi} from "./todoAPI";
+import {apiFetchAllTodos, saveToDoApi} from "./todoAPI";
 
 const initialState = {
    items: [
        {
        id : 0,
-       text : 'One'
+       title : 'One'
         },
        {
            id : 1,
-           text : 'Two'
+           title : 'Two'
        },
-   ]
+   ],
+    loading : false,
 };
 export const saveToDo = createAsyncThunk(
     'todos/saveToDo',
@@ -25,7 +26,14 @@ export const saveToDo = createAsyncThunk(
         return response;
     }
 );
-
+export const fetchAllToDo = createAsyncThunk(
+    'todos/fetchAllToDo',
+    async()=>{
+        const response = await apiFetchAllTodos();
+        console.log('Fetch all Response ',response);
+        return response;
+    }
+);
 export const todoSlice = createSlice({
     name: 'todos',
     initialState,
@@ -44,9 +52,19 @@ export const todoSlice = createSlice({
             })*/
             .addCase(saveToDo.fulfilled, (state, action) => {
                 state.items.push( action.payload);
+            })
+            .addCase(fetchAllToDo.pending, (state, action) => {
+                console.log('fetchAllToDo.pending');
+                state.loading = true;
+            })
+            .addCase(fetchAllToDo.fulfilled, (state, action) => {
+                console.log('fetchAllToDo.fulfilled');
+                state.items = action.payload;
+                state.loading = false;
             });
     },
 });
 export const { addToDo,removeTodo } = todoSlice.actions;
 export const selectToDo = (state) => state.todos.items;
+export const selectToDoLoading = (state) => state.todos.loading;
 export default todoSlice.reducer;
