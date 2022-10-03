@@ -1,0 +1,18 @@
+.movie
+{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-left:50px;
+    margin-right: 50px;
+    margin-bottom: 5px;
+}
+.movie-title
+{
+    align-items: center;
+    font-weight: bold;
+}
+.movie-body
+{
+    padding-bottom: 10px;
+
+}

@@ -56,12 +56,13 @@ function App() {
                                  className={"nav-link"}>To Do List</NavLink> &nbsp;
 
                     </li>
-                    {/*<li className="nav-item active">
+                    <li className="nav-item active">
                         <NavLink to="/movies"
                                  style={getActiveStyle()}
                                  className={"nav-link"}>Movie</NavLink> &nbsp;
 
                     </li>
+                    {/*
 
                     <li className="nav-item">
                         <NavLink to="/about"

@@ -13,6 +13,7 @@ import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import ToDoListPage from "./pages/ToDoListPage";
+import MovieListPage from "./pages/MovieListPage";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -25,6 +26,9 @@ root.render(
                   <Route path="/" element={<App />} >
 
                       <Route path="todos" element={<ToDoListPage />} />
+                      <Route path="movies" element={<MovieListPage />} >
+                         {/* <Route path={":movieId"} element={<MovieDetails/>} />*/}
+                      </Route>
                      {/* <Route path="about"
                              element={
                                  <ProtectedRoute user={{name:"Something"}}>
@@ -34,9 +38,7 @@ root.render(
                       />*/}
                      {/* <Route path="login" element={<Login />} />
                       <Route path="user/*" element={<Users />} />
-                      <Route path="movies" element={<Movie />} >
-                          <Route path={":movieId"} element={<MovieDetails/>} />
-                      </Route>*/}
+                      */}
                   </Route>
 
 
