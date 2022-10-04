@@ -1,0 +1,24 @@
+2022-10-04 19:47:44,255 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2022-10-04 19:47:44,289 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/5.5/libexec/bin/user.properties
+2022-10-04 19:47:44,289 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/5.5/libexec/bin/system.properties
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: Copyright (c) 1998-2022 The Apache Software Foundation
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: Version 5.5
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: java.version=18.0.2.1
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: os.name=Mac OS X
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: os.arch=x86_64
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: os.version=12.3.1
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: file.encoding=UTF-8
+2022-10-04 19:47:44,297 INFO o.a.j.JMeter: java.awt.headless=null
+2022-10-04 19:47:44,298 INFO o.a.j.JMeter: Max memory     =1073741824
+2022-10-04 19:47:44,298 INFO o.a.j.JMeter: Available Processors =16
+2022-10-04 19:47:44,308 INFO o.a.j.JMeter: Default Locale=English (EN)
+2022-10-04 19:47:44,309 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2022-10-04 19:47:44,309 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/5.5/libexec
+2022-10-04 19:47:44,309 INFO o.a.j.JMeter: user.dir  =/Users/Project/Turing/JSReact/TuringJSReact4thBatch/react-redux-fourth-batch
+2022-10-04 19:47:44,309 INFO o.a.j.JMeter: PWD       =/Users/Project/Turing/JSReact/TuringJSReact4thBatch/react-redux-fourth-batch
+2022-10-04 19:47:44,314 INFO o.a.j.JMeter: IP: 192.168.99.203 Name: MacBooks-MBP.lan FullName: macbooks-mbp.lan
+2022-10-04 19:47:44,321 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2022-10-04 19:47:44,823 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2022-10-04 19:47:47,729 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-0e10c0e28b7144f0b48326d8440c1535-gui
+2022-10-04 19:47:49,960 INFO o.j.r.PluginManager: Plugins Status: [jpgc-plugins-manager=1.7, jmeter-core=5.5, jmeter-ftp=5.5, jmeter-http=5.5, jmeter-jdbc=5.5, jmeter-jms=5.5, jmeter-junit=5.5, jmeter-java=5.5, jmeter-ldap=5.5, jmeter-mail=5.5, jmeter-mongodb=5.5, jmeter-native=5.5, jmeter-tcp=5.5, jmeter-components=5.5]

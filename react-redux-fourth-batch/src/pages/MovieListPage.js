@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Swal from 'sweetalert2'
@@ -9,9 +9,11 @@ import * as Yup from 'yup';
 import MovieList from "../features/movies/MovieList";
 import {useDispatch, useSelector} from "react-redux";
 import {selectCount} from "../features/counter/counterSlice";
-import {selectMovie, deleteMovie, addMovie} from "../features/movies/movieSlice";
+import {selectMovie, deleteMovie, addMovie, updateMovie, getAllMovie, saveMovie} from "../features/movies/movieSlice";
 import {nanoid} from "@reduxjs/toolkit";
+
 const MovieSchema = Yup.object().shape({
+    _id:Yup.string(),
     title: Yup.string()
         .min(2, 'Too Short!')
         .max(50, 'Too Long!')
@@ -28,8 +30,13 @@ export default function MovieListPage(props)
 {
     const moviesList = useSelector(selectMovie);
     const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(getAllMovie())
+    },[]);
     const [show, setShow] = useState(false);
     let [movieFormData,setMovieFormData] = useState({
+        _id:0,
         title:'',
         year:'',
         director:'',
@@ -38,14 +45,38 @@ export default function MovieListPage(props)
     });
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const btnNewHandler= ()=>{
+        setMovieFormData({
+            _id:0,
+            title:'',
+            year:'',
+            director:'',
+            phoneNo:'',
 
-    const addNewMovieHandler = (movie)=>{
-        dispatch(addMovie(movie));
+        });
+        handleShow();
+    }
+    const addOrUpdateHandler = (movie)=>{
+        console.log("Movie.id ",!!movie._id);
+        if(!!movie._id)
+        {
+            console.log('Update Movie ',movie);
+            dispatch(updateMovie(movie));
+        }
+        else
+        {
+            console.log('save Movie ',movie);
+            let movieClone = {...movie};
+            movieClone._id = undefined;
+            dispatch(saveMovie(movieClone));
+        }
+
         handleClose();
     };
     const editHandler = (movie)=>{
         console.log("Edit movie handler ",movie);
         let newFormData = {
+            _id:movie._id,
             title: movie.title,
             year: movie.year,
             director : movie.director.name,
@@ -58,7 +89,7 @@ export default function MovieListPage(props)
         console.log("Delete movie handler ",movie);
         Swal.fire({
             title: 'Are you sure?',
-       /*     text: "You won't be able to revert this!",*/
+
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -73,13 +104,13 @@ export default function MovieListPage(props)
                     'success'
                 )
             }
-        })
+        });
     };
 
 
     function formValueToMovie(values) {
         let movie = {
-            _id: nanoid(),
+            _id: values._id,
             title: values.title,
             year: values.year,
             director: {
@@ -95,7 +126,7 @@ export default function MovieListPage(props)
         <button
             type={"button"}
             className={"btn btn-primary"}
-            onClick={handleShow}>
+            onClick={btnNewHandler}>
             New
         </button>
 
@@ -109,7 +140,7 @@ export default function MovieListPage(props)
                         onSubmit={(values)=>{
                             console.log('Form value ',values);
                             let movie = formValueToMovie(values);
-                            addNewMovieHandler(movie);
+                            addOrUpdateHandler(movie);
                         }}>
                     <Form className={"row"}>
                         <div className={"mb-3 input-group"}>
@@ -161,7 +192,7 @@ export default function MovieListPage(props)
                                 Close
                             </Button>
                             <Button variant="primary" type={"submit"} >
-                                Save
+                               Save
                             </Button>
                         </div>
 

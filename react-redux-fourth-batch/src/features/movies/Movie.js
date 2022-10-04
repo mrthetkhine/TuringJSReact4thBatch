@@ -1,6 +1,13 @@
+import {useNavigate} from "react-router-dom";
 import  "./Movie.css";
+
 export default function Movie({movie,deleteBtnHandler,editHandler})
 {
+    const navigate = useNavigate();
+    const reviewHandler = (movie)=>{
+        console.log('Load Movie Review ',movie);
+        navigate(movie._id);
+    }
     return (<div className={"movie"}>
 
         <div className={"movie-title"}>
@@ -22,6 +29,11 @@ export default function Movie({movie,deleteBtnHandler,editHandler})
                     className={"btn btn-primary"}
                     onClick={()=>deleteBtnHandler(movie)}>
                 Delete
+            </button>
+            <button type={"button"}
+                    className={"btn btn-primary"}
+                    onClick={()=>reviewHandler(movie)}>
+                Review
             </button>
         </div>
     </div>);

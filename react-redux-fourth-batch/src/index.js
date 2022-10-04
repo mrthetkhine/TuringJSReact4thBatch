@@ -14,6 +14,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import ToDoListPage from "./pages/ToDoListPage";
 import MovieListPage from "./pages/MovieListPage";
+import MovieDetailPage from "./features/reviews/MovieDetailPage";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -27,8 +28,9 @@ root.render(
 
                       <Route path="todos" element={<ToDoListPage />} />
                       <Route path="movies" element={<MovieListPage />} >
-                         {/* <Route path={":movieId"} element={<MovieDetails/>} />*/}
+
                       </Route>
+                      <Route path={"movies/:movieId"} element={<MovieDetailPage/>} />
                      {/* <Route path="about"
                              element={
                                  <ProtectedRoute user={{name:"Something"}}>
