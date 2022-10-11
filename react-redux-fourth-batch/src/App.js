@@ -15,6 +15,7 @@ import ToDoList from "./features/todos/ToDoList";
 import ToDoCount from "./features/todos/ToDoCount";
 import {useDispatch} from "react-redux";
 import {fetchAllToDo} from "./features/todos/todoSlice";
+import {useAuthentication} from "./services/authService";
 
 function App() {
     console.log('App Render');
@@ -62,13 +63,15 @@ function App() {
                                  className={"nav-link"}>Movie</NavLink> &nbsp;
 
                     </li>
-                    {/*
 
-                    <li className="nav-item">
-                        <NavLink to="/about"
+
+                    {
+                        useAuthentication() && <li className="nav-item">
+                        <NavLink to="/logout"
                                  style={getActiveStyle()}
-                                 className={"nav-link"}>About</NavLink> &nbsp;
-                    </li>*/}
+                                 className={"nav-link"}>Logout</NavLink> &nbsp;
+                        </li>
+                    }
 
 
                 </ul>

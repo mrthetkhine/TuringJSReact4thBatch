@@ -9,48 +9,80 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import {injectStore} from "./setting/our_axios";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import ToDoListPage from "./pages/ToDoListPage";
 import MovieListPage from "./pages/MovieListPage";
 import MovieDetailPage from "./features/reviews/MovieDetailPage";
+import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import {useAuthentication} from "./services/authService";
+import LogoutPage from "./pages/LogoutPage";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-root.render(
-  <React.StrictMode>
-      <Provider store={store}>
-          <BrowserRouter>
-              <Routes>
-                  <Route path="/" element={<App />} >
+function AppRouter() {
+    return <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App/>}>
 
-                      <Route path="todos" element={<ToDoListPage />} />
-                      <Route path="movies" element={<MovieListPage />} >
+                <Route path="todos" element={<ToDoListPage/>}/>
+                <Route path="/login" element={<LoginPage/>}>
 
-                      </Route>
-                      <Route path={"movies/:movieId"} element={<MovieDetailPage/>} />
-                     {/* <Route path="about"
+                </Route>
+                <Route path="/logout" element={<LogoutPage/>}>
+                </Route>
+                <Route path="/movies" element={
+                    <ProtectedRoute
+                        redirectTo={"/login?redirectTo=/movies"}
+                         isAuth={useAuthentication()}>
+                        <MovieListPage/>
+                    </ProtectedRoute>}>
+
+                </Route>
+
+                <Route
+                    path={"movies/:movieId"}
+                    element={
+                        <ProtectedRoute
+                            redirectTo={"/login?redirectTo=/movie-detail/:movieId"}
+                            isAuth={useAuthentication()}>
+                            <MovieDetailPage/>
+                        </ProtectedRoute>
+                    }
+                />
+                {/* <Route path="movies" element={<MovieListPage />} >
+
+                      </Route>*/}
+                {/* <Route path={"movies/:movieId"} element={<MovieDetailPage/>} />*/}
+                {/* <Route path="about"
                              element={
                                  <ProtectedRoute user={{name:"Something"}}>
                                      <About />
                                  </ProtectedRoute>
                              }
                       />*/}
-                     {/* <Route path="login" element={<Login />} />
+                {/* <Route path="login" element={<Login />} />
                       <Route path="user/*" element={<Users />} />
                       */}
-                  </Route>
+            </Route>
 
 
-                  {/*<Route path="*" element={<NotFoundPage />} >
+            {/*<Route path="*" element={<NotFoundPage />} >
                   </Route>*/}
-              </Routes>
-          </BrowserRouter>
+        </Routes>
+    </BrowserRouter>;
+}
 
-
-    </Provider>
+injectStore(store);
+root.render(
+  <React.StrictMode>
+      <Provider store={store}>
+          <AppRouter/>
+      </Provider>
   </React.StrictMode>
 );
 
