@@ -1,6 +1,7 @@
 import {loadTodos, TodoItem, TodoState} from "../todo/todoSlice";
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../../app/store";
+import {apiDeleteMovie, apiGetAllMovie, apiSaveMovie, apiUpdateMovie} from "./movieApi";
 
 export interface Director {
     _id?: string;
@@ -30,7 +31,46 @@ const initialState: MovieList = {
         }
     ],
 };
+export const getAllMovie = createAsyncThunk(
+    'movie/getAllMovie',
+    async () => {
+        console.log("API get all movie");
+        const response = await apiGetAllMovie();
 
+        console.log("All movie json ",response.data);
+        return response.data;
+    }
+);
+export const saveMovie = createAsyncThunk(
+    'movie/saveMovie',
+    async (movie:Movie) => {
+        console.log("API get all movie");
+        const response = await apiSaveMovie(movie);
+
+        console.log("Save movie json ",response.data);
+        return response.data;
+    }
+);
+export const updateMovie = createAsyncThunk(
+    'movie/updateMovie',
+    async (movie:Movie) => {
+        console.log("updateMovie movie");
+        const response = await apiUpdateMovie(movie);
+
+        console.log("Update movie json ",response.data);
+        return response.data;
+    }
+);
+export const deleteMovie = createAsyncThunk(
+    'movie/deleteMovie',
+    async (movie:Movie) => {
+        console.log("deleteMovie movie");
+        const response = await apiDeleteMovie(movie);
+
+        console.log("deleteMovie movie json ",response.data);
+        return response.data;
+    }
+);
 export const movieSlice = createSlice({
     name: 'movie',
     initialState,
@@ -41,6 +81,19 @@ export const movieSlice = createSlice({
         removeMovie:(state, action: PayloadAction<Movie>) => {
             state.movies = state.movies.filter((movie:Movie)=>movie._id !== action.payload._id);
         },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getAllMovie.fulfilled, (state,action) => {
+                state.movies = action.payload;
+            })
+            .addCase(saveMovie.fulfilled, (state,action) => {
+                state.movies = [... state.movies, action.payload];
+            })
+            .addCase(updateMovie.fulfilled, (state,action) => {
+                state.movies =state.movies.map(movie=>movie._id === action.payload._id?action.payload:movie);
+            });
+
     },
 });
 

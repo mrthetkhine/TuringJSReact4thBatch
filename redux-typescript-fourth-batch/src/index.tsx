@@ -4,9 +4,13 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import {injectStore} from "./setting/our_axios";
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const container = document.getElementById('root')!;
+
+injectStore(store);
 const root = createRoot(container);
 
 root.render(
